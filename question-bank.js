@@ -1,615 +1,2253 @@
-(() => {
-  const chapters = [
-    { name: "17.1 Introduction & Properties", description: "Khái niệm, nguồn gốc, mô tiết, tính chất lý hóa của tinh dầu (volatile oils)." },
-    { name: "17.2 Classification of Volatile Oils", description: "Phân loại tinh dầu theo nhóm chức hóa học (Table 17.1) và dược liệu tiêu biểu." },
-    { name: "17.3 Extraction of Volatile Oils", description: "Các phương pháp chiết xuất tinh dầu: chưng cất, rạch/ép, dung môi không bay hơi & bay hơi." },
-    { name: "17.4–17.5 Terpenoids & Isoprene Rule", description: "Cấu trúc terpenoid, quy tắc isoprene, phân loại theo số carbon (C5H8)n và số vòng." },
-    { name: "17.6–17.9 Evaluation, Tests, Storage & Uses", description: "Kiểm nghiệm, thử nghiệm hóa học, bảo quản và ứng dụng điều trị của tinh dầu." },
-    { name: "17.10–17.11 Hydrocarbons, Alcohols & Turpentine", description: "Tinh dầu chứa hydrocarbon, alcohol và chuyên luận dầu thông (Turpentine oil)." }
-  ];
+/**
+ * Question Bank - Reading Comprehension for Pharmaceutical Chemistry / Pharmacology
+ * Based on the provided reading materials:
+ * 1. European Plants as Sources of Effective Medicines
+ * 2. Drug and Active Principle
+ * 3. Drug Development
+ * 4. Search for Prototypes (Lead compounds)
+ * 5. Alkaloids (summary-based)
+ * 6. Volatile Oils (summary-based)
+ * 7. Basic concepts in pharmaceutical chemistry
+ *
+ * Each section aims for ~40-50 questions where source text allows.
+ * Question types: true_false_not_given | multiple_choice | matching | short_answer | fill_blank
+ */
 
-  const rawQuestions = [
-    // --- PART 0: 17.1 Introduction & Properties (18 questions) ---
-    {
-      chapter: 0,
-      text: "Volatile oils are also commonly known as:",
-      options: ["Essential oils and ethereal oils", "Fixed oils and mineral oils", "Glycosides and alkaloids", "Resins and mucilages"],
-      correct: 0,
-      explanation: "Mục 17.1 nêu rõ tinh dầu bay hơi ở nhiệt độ thường nên gọi là volatile/ethereal oils, và đại diện cho tinh túy hoạt chất thực vật nên còn gọi là essential oils."
-    },
-    {
-      chapter: 0,
-      text: "Which feature characterizes volatile oils when exposed to air at ordinary temperature?",
-      options: ["They evaporate without leaving a permanent grease spot", "They remain solid and non-volatile", "They saponify rapidly with alkalis", "They dissolve freely in distilled water"],
-      correct: 0,
-      explanation: "Khác với dầu béo (fixed oils), tinh dầu bay hơi hoàn toàn khi tiếp xúc không khí ở nhiệt độ thường, không để lại vết dầu loang vĩnh viễn trên giấy lọc và không bị xà phòng hóa bởi kiềm."
-    },
-    {
-      chapter: 0,
-      text: "In umbelliferous fruits, volatile oils are usually contained in:",
-      options: ["Oil ducts", "Mesophyll cells", "Glandular trichomes", "Sub-epidermal starch grains"],
-      correct: 0,
-      explanation: "Trong quả họ Hoa tán (umbelliferous fruits), tinh dầu thường nằm trong các ống tiết (oil ducts)."
-    },
-    {
-      chapter: 0,
-      text: "Where are the oil cells or oil glands located in lemon and orange fruits?",
-      options: ["In the sub-epidermal tissue of the peel", "Inside the central endosperm", "Only in the root xylem", "In the woody vascular bundles"],
-      correct: 0,
-      explanation: "Ở chanh và cam, tế bào tiết hoặc túi tiết dầu nằm ở mô dưới biểu bì (sub-epidermal tissue) của vỏ quả."
-    },
-    {
-      chapter: 0,
-      text: "In eucalyptus leaves, volatile oil is mainly stored in which tissue?",
-      options: ["Mesophyll", "Root cortex", "Phloem fibers", "Seed coat"],
-      correct: 0,
-      explanation: "Theo mục 17.1, tinh dầu trong lá bạch đàn (eucalyptus leaves) nằm trong mô thịt lá (mesophyll)."
-    },
-    {
-      chapter: 0,
-      text: "Why do whole black mustard seeds have no odor until crushed with water?",
-      options: ["Sinigrin and myrosin are in separate cells and react only when mixed with water", "The oil is frozen solid inside the seed coat", "Mustard seeds contain only fixed oils until heated", "Water converts cellulose directly into volatile oil"],
-      correct: 0,
-      explanation: "Glycoside sinigrin và enzym myrosin nằm ở các tế bào khác nhau trong hạt mù tạt đen; chỉ khi nghiền nát với nước chúng mới tiếp xúc và thủy phân tạo allyl isothiocyanate có mùi hăng mạnh."
-    },
-    {
-      chapter: 0,
-      text: "Which compound is formed by the enzymatic decomposition of sinigrin in black mustard seeds?",
-      options: ["Allyl isothiocyanate", "Eugenol", "Camphor", "Menthol"],
-      correct: 0,
-      explanation: "Enzym myrosin phân giải glycoside sinigrin khi có mặt nước tạo thành allyl isothiocyanate — thành phần chính của tinh dầu mù tạt."
-    },
-    {
-      chapter: 0,
-      text: "Which statement is TRUE regarding the solubility of volatile oils?",
-      options: ["Freely soluble in ether and chloroform, fairly soluble in alcohol, insoluble in water", "Freely soluble in water and insoluble in organic solvents", "Insoluble in alcohol, ether, and chloroform", "Soluble only in strong mineral acids"],
-      correct: 0,
-      explanation: "Tinh dầu tan dễ trong ether và chloroform, tan khá trong cồn (alcohol) và thực tế không tan trong nước."
-    },
-    {
-      chapter: 0,
-      text: "Which substances can be dissolved by volatile oils?",
-      options: ["Fixed oils, fats, resins, camphor, and free alkaloids", "Cellulose, starch, and inorganic salts", "Proteins and nucleic acids in water", "Polysaccharide gums and pectins"],
-      correct: 0,
-      explanation: "Tinh dầu có khả năng hòa tan nhiều chất như dầu béo, mỡ, nhựa, long não (camphor) và nhiều alkaloid ở dạng base tự do."
-    },
-    {
-      chapter: 0,
-      text: "Chemically, most volatile oils are derived from:",
-      options: ["Terpenes (mainly mono- and sesquiterpenes) and their oxygenated derivatives", "Polypeptides and amino acid polymers", "High-molecular-weight polysaccharides", "Triglycerides of long-chain fatty acids"],
-      correct: 0,
-      explanation: "Về mặt hóa học, tinh dầu chủ yếu có nguồn gốc từ các terpene (chủ yếu là monoterpene và sesquiterpene) cùng các dẫn chất chứa oxy của chúng."
-    },
-    {
-      chapter: 0,
-      text: "Which volatile oil is specifically mentioned in the text as being heavier than water?",
-      options: ["Clove oil", "Turpentine oil", "Peppermint oil", "Lemon oil"],
-      correct: 0,
-      explanation: "Đa số tinh dầu nhẹ hơn nước, ngoại trừ một số ít như tinh dầu đinh hương (Clove oil) nặng hơn nước."
-    },
-    {
-      chapter: 0,
-      text: "What happens to colorless volatile oils when exposed to air and direct sunlight?",
-      options: ["They become darker due to oxidation", "They turn into water-soluble sugars", "They remain completely unchanged indefinitely", "They precipitate as white crystalline salts"],
-      correct: 0,
-      explanation: "Tinh dầu thường là chất lỏng không màu, nhưng khi tiếp xúc với không khí và ánh sáng trực tiếp sẽ sẫm màu hơn do quá trình oxy hóa."
-    },
-    {
-      chapter: 0,
-      text: "How do fixed oils differ from volatile oils in physical and chemical tests?",
-      options: ["Fixed oils leave a permanent grease spot and saponify with alkalis", "Fixed oils evaporate completely at room temperature", "Fixed oils are always optically active terpenes", "Fixed oils never leave stains on filter paper"],
-      correct: 0,
-      explanation: "Dầu béo (fixed oils) để lại vết dầu nhờn vĩnh viễn trên giấy lọc và bị xà phòng hóa với kiềm, còn tinh dầu thì không."
-    },
-    {
-      chapter: 0,
-      text: "Which physical property is characteristic of most volatile oils?",
-      options: ["High refractive index and optical activity", "Low refractive index and complete optical inactivity", "Density always greater than 1.5 g/mL", "Boiling point below 0°C"],
-      correct: 0,
-      explanation: "Tinh dầu có mùi đặc trưng, chỉ số khúc xạ cao (high refractive index) và đa số có tính quang hoạt (optically active)."
-    },
-    {
-      chapter: 0,
-      text: "In black mustard seed, what role does myrosin play?",
-      options: ["It is the enzyme that decomposes sinigrin in the presence of water", "It is the volatile oil responsible for the pungent smell", "It is a fixed oil used as a solvent", "It is a resin that coats the seed epidermis"],
-      correct: 0,
-      explanation: "Myrosin là enzym thủy phân glycoside sinigrin khi hạt được nghiền nát với nước."
-    },
-    {
-      chapter: 0,
-      text: "In some plants, volatile oils are secreted externally in:",
-      options: ["Trichomes", "Root hairs", "Xylem vessels", "Pith parenchyma"],
-      correct: 0,
-      explanation: "Mục 17.1 liệt kê các cấu trúc tiết tinh dầu gồm ống tiết, tế bào tiết, túi tiết và lông tiết (trichomes) ở nhiều loài thực vật."
-    },
+const questionBank = {
+  // ============================================================
+  // SECTION 1: European Plants as Sources of Effective Medicines
+  // ============================================================
+  europeanPlants: {
+    title: "European Plants as Sources of Effective Medicines",
+    source: "Color Atlas of Pharmacology – Thieme",
+    questions: [
+      // True / False / Not Given (original + expanded)
+      {
+        id: "EP-01",
+        type: "true_false_not_given",
+        question: "No medicinal plants were chosen to develop drugs in modern medicine.",
+        answer: "FALSE",
+        explanation: "The text states that few of the hundreds of reputedly curative plant species have survived as drugs with documented effectiveness – meaning some were chosen."
+      },
+      {
+        id: "EP-02",
+        type: "true_false_not_given",
+        question: "The foxglove leaves tea was proven toxic and should be used with cautions.",
+        answer: "NOT GIVEN",
+        explanation: "The text mentions Withering introduced digitalis leaves as a tea and described the result, but does not state it was proven toxic or give caution advice."
+      },
+      {
+        id: "EP-03",
+        type: "true_false_not_given",
+        question: "Although foxglove showed effectiveness in treatment of cardiac dropsy, the efficacy of isolated compounds was not proven in clinical trials.",
+        answer: "FALSE",
+        explanation: "The text says digoxin continues to be obtained from the plants because its chemical synthesis is too difficult and expensive, and it is 'proven clinically most useful'."
+      },
+      {
+        id: "EP-04",
+        type: "true_false_not_given",
+        question: "The responsible compounds for Atropa belladonna bioactivities are still not known.",
+        answer: "FALSE",
+        explanation: "The text clearly identifies atropine and scopolamine as the alkaloids responsible."
+      },
+      {
+        id: "EP-05",
+        type: "true_false_not_given",
+        question: "Aspirin is not found from willow tree.",
+        answer: "TRUE",
+        explanation: "Aspirin (acetylsalicylic acid) is a synthetic derivative obtained by acetylation of salicylic acid; it is not found naturally in the willow tree."
+      },
+      {
+        id: "EP-06",
+        type: "true_false_not_given",
+        question: "Colchicine is effective for acute Gout attacks via multiple molecular mechanisms.",
+        answer: "TRUE",
+        explanation: "The text describes inhibition of tubulin polymerization (affecting macrophages/neutrophils) and also prevention of mitosis (spindle poison)."
+      },
+      {
+        id: "EP-07",
+        type: "true_false_not_given",
+        question: "William Withering introduced digitalis leaves as a tea at the end of the 18th century.",
+        answer: "TRUE",
+        explanation: "Explicitly stated in section A."
+      },
+      {
+        id: "EP-08",
+        type: "true_false_not_given",
+        question: "Digoxin is still obtained from Digitalis purpurea or D. lanata because chemical synthesis is too difficult and expensive.",
+        answer: "TRUE",
+        explanation: "Directly stated."
+      },
+      {
+        id: "EP-09",
+        type: "true_false_not_given",
+        question: "Atropine is a competitive antagonist at the nicotinic acetylcholine receptor.",
+        answer: "FALSE",
+        explanation: "It is a competitive antagonist at the muscarinic type of acetylcholine receptor."
+      },
+      {
+        id: "EP-10",
+        type: "true_false_not_given",
+        question: "Salicylic acid is no longer used orally for pain, fever and inflammation because of poor tolerability.",
+        answer: "TRUE",
+        explanation: "The text says it is no longer taken orally; acetylation improved oral tolerability."
+      },
+      {
+        id: "EP-11",
+        type: "true_false_not_given",
+        question: "Colchicine causes arrest of mitosis in anaphase.",
+        answer: "FALSE",
+        explanation: "It causes arrest in metaphase."
+      },
+      {
+        id: "EP-12",
+        type: "true_false_not_given",
+        question: "The effects of Atropa belladonna were already known in antiquity.",
+        answer: "TRUE",
+        explanation: "Explicitly stated."
+      },
+      {
+        id: "EP-13",
+        type: "true_false_not_given",
+        question: "Lily of the valley and christmas rose were used in the Middle Ages to treat dropsy.",
+        answer: "TRUE",
+        explanation: "They are listed in the group of local plants used since the middle ages to treat “dropsy”."
+      },
+      {
+        id: "EP-14",
+        type: "true_false_not_given",
+        question: "Modern medicine requires each drug to satisfy objective criteria of efficacy.",
+        answer: "TRUE",
+        explanation: "Stated in the introduction."
+      },
+      {
+        id: "EP-15",
+        type: "true_false_not_given",
+        question: "Scopolamine is present in larger amounts than atropine in Atropa belladonna.",
+        answer: "FALSE",
+        explanation: "Scopolamine is present in smaller amounts."
+      },
 
-    // --- PART 1: 17.2 Classification of Volatile Oils (16 questions) ---
-    {
-      chapter: 1,
-      text: "According to Table 17.1, volatile oils are classified primarily on the basis of:",
-      options: ["Functional groups present", "Botanical family of the plant", "Geographical altitude of cultivation", "Color of the distilled liquid"],
-      correct: 0,
-      explanation: "Mục 17.2 nêu rõ tinh dầu được phân loại dựa trên nhóm chức hóa học (functional groups) có mặt trong cấu trúc (Bảng 17.1)."
-    },
-    {
-      chapter: 1,
-      text: "Which drug is listed in Table 17.1 as an example of hydrocarbon volatile oils?",
-      options: ["Turpentine oil", "Peppermint oil", "Clove oil", "Eucalyptus oil"],
-      correct: 0,
-      explanation: "Theo Bảng 17.1, nhóm Hydrocarbons có đại diện tiêu biểu là tinh dầu thông (Turpentine oil)."
-    },
-    {
-      chapter: 1,
-      text: "Peppermint oil, Pudina, and Sandalwood oil belong to which chemical group in Table 17.1?",
-      options: ["Alcohols", "Ketones", "Oxides", "Esters"],
-      correct: 0,
-      explanation: "Theo Bảng 17.1, Peppermint oil, Pudina và Sandalwood oil thuộc nhóm Alcohols."
-    },
-    {
-      chapter: 1,
-      text: "Which group of volatile oils includes Lemongrass oil, Cinnamon, Cassia, and Saffron?",
-      options: ["Aldehydes", "Phenols", "Hydrocarbons", "Oxides"],
-      correct: 0,
-      explanation: "Cymbopogon sp., tinh dầu sả (Lemongrass oil), quế (Cinnamon, Cassia) và nghệ tây (Saffron) thuộc nhóm Aldehydes."
-    },
-    {
-      chapter: 1,
-      text: "Camphor, Caraway, Dill, Jatamansi, and Fennel are classified under which group?",
-      options: ["Ketones", "Alcohols", "Phenolic ethers", "Esters"],
-      correct: 0,
-      explanation: "Theo Bảng 17.1, Camphor, Caraway, Dill, Jatamansi và Fennel thuộc nhóm Ketones."
-    },
-    {
-      chapter: 1,
-      text: "Which drugs are examples of phenol-containing volatile oils in Table 17.1?",
-      options: ["Clove, Ajowan, and Tulsi", "Nutmeg and Calamus", "Valerian and Rosemary oil", "Eucalyptus and Cardamom"],
-      correct: 0,
-      explanation: "Nhóm Phenols trong Bảng 17.1 gồm Đinh hương (Clove), Ajowan và Hương nhu (Tulsi)."
-    },
-    {
-      chapter: 1,
-      text: "Nutmeg and Calamus belong to which functional group class in Table 17.1?",
-      options: ["Phenolic ethers", "Aldehydes", "Ketones", "Hydrocarbons"],
-      correct: 0,
-      explanation: "Nutmeg (nhục đậu khấu) và Calamus (thạch xương bồ) thuộc nhóm Phenolic ethers."
-    },
-    {
-      chapter: 1,
-      text: "Eucalyptus, Cardamom, and Chenopodium oil are examples of which class?",
-      options: ["Oxides", "Esters", "Phenols", "Alcohols"],
-      correct: 0,
-      explanation: "Eucalyptus, Cardamom và Chenopodium oil thuộc nhóm Oxides trong Bảng 17.1."
-    },
-    {
-      chapter: 1,
-      text: "Which set of drugs represents ester-containing volatile oils in Table 17.1?",
-      options: ["Valerian, Rosemary oil, Garlic, and Gaultheria oil", "Turpentine oil and Sandalwood oil", "Cinnamon, Cassia, and Saffron", "Clove, Tulsi, and Nutmeg"],
-      correct: 0,
-      explanation: "Theo Bảng 17.1, nhóm Esters gồm Valerian, Rosemary oil, Garlic và Gaultheria oil."
-    },
-    {
-      chapter: 1,
-      text: "Which of the following is a mismatch according to Table 17.1?",
-      options: ["Sandalwood oil — Ketones", "Turpentine oil — Hydrocarbons", "Cinnamon — Aldehydes", "Gaultheria oil — Esters"],
-      correct: 0,
-      explanation: "Sandalwood oil thuộc nhóm Alcohols chứ không phải Ketones."
-    },
-    {
-      chapter: 1,
-      text: "Which two drugs are both classified as aldehydes in Table 17.1?",
-      options: ["Cinnamon and Lemongrass oil", "Clove and Eucalyptus", "Camphor and Menthol", "Valerian and Turpentine"],
-      correct: 0,
-      explanation: "Cả Cinnamon và Lemongrass oil đều nằm trong nhóm Aldehydes ở Bảng 17.1."
-    },
-    {
-      chapter: 1,
-      text: "If a student is grouping Eucalyptus and Cardamom together, which chemical class are they studying?",
-      options: ["Oxides", "Phenolic ethers", "Hydrocarbons", "Ketones"],
-      correct: 0,
-      explanation: "Cả Eucalyptus và Cardamom đều là tinh dầu thuộc nhóm Oxides."
-    },
+      // Multiple Choice
+      {
+        id: "EP-16",
+        type: "multiple_choice",
+        question: "What is the main reason digoxin is still extracted from plants rather than synthesized?",
+        options: [
+          "A. It is more effective when extracted from plants",
+          "B. Chemical synthesis is too difficult and expensive",
+          "C. Plant extraction produces fewer side effects",
+          "D. Synthetic digoxin is not approved by regulatory authorities"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-17",
+        type: "multiple_choice",
+        question: "Atropine is the prototype of a competitive antagonist at which receptor?",
+        options: [
+          "A. Nicotinic acetylcholine receptor",
+          "B. Muscarinic acetylcholine receptor",
+          "C. Adrenergic receptor",
+          "D. Dopamine receptor"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-18",
+        type: "multiple_choice",
+        question: "Which plant was used cosmetically in antiquity to dilate the pupils?",
+        options: [
+          "A. Digitalis purpurea",
+          "B. Salix alba",
+          "C. Atropa belladonna",
+          "D. Colchicum autumnale"
+        ],
+        answer: "C"
+      },
+      {
+        id: "EP-19",
+        type: "multiple_choice",
+        question: "Acetylation of salicylic acid was introduced around which year?",
+        options: [
+          "A. 1800",
+          "B. 1850",
+          "C. 1900",
+          "D. 1950"
+        ],
+        answer: "C"
+      },
+      {
+        id: "EP-20",
+        type: "multiple_choice",
+        question: "Colchicine inhibits the polymerization of which protein?",
+        options: [
+          "A. Actin",
+          "B. Tubulin",
+          "C. Myosin",
+          "D. Keratin"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-21",
+        type: "multiple_choice",
+        question: "The active principles in foxglove and related plants are:",
+        options: [
+          "A. Alkaloids",
+          "B. Steroids with sugar molecules attached at C3",
+          "C. Salicylic acid derivatives",
+          "D. Peptides"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-22",
+        type: "multiple_choice",
+        question: "Which of the following is still used as an external keratolytic agent?",
+        options: [
+          "A. Digoxin",
+          "B. Atropine",
+          "C. Salicylic acid",
+          "D. Colchicine"
+        ],
+        answer: "C"
+      },
+      {
+        id: "EP-23",
+        type: "multiple_choice",
+        question: "William Withering was a physician from which country?",
+        options: [
+          "A. England",
+          "B. Scotland",
+          "C. Germany",
+          "D. France"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-24",
+        type: "multiple_choice",
+        question: "Colchicine causes mitotic arrest in which phase?",
+        options: [
+          "A. Prophase",
+          "B. Metaphase",
+          "C. Anaphase",
+          "D. Telophase"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-25",
+        type: "multiple_choice",
+        question: "The beneficial effect of colchicine in acute gout is mainly due to its action on:",
+        options: [
+          "A. Red blood cells",
+          "B. Macrophages and neutrophils",
+          "C. Platelets",
+          "D. Lymphocytes"
+        ],
+        answer: "B"
+      },
 
-    // --- PART 2: 17.3 Extraction of Volatile Oils (18 questions) ---
-    {
-      chapter: 2,
-      text: "In distillation of volatile oils, which method is used for fresh plant materials vs. air-dried parts?",
-      options: ["Hydrodistillation for fresh materials; steam distillation for air-dried parts", "Steam distillation for fresh materials; dry roasting for dried parts", "Scarification for fresh leaves; enfleurage for roots", "Ecuelle method for dried bark; sponge process for seeds"],
-      correct: 0,
-      explanation: "Mục 17.3 nêu rõ: dược liệu tươi tách bằng cất nước (hydrodistillation), còn bộ phận phơi khô trong không khí tách bằng cất lôi cuốn hơi nước (steam distillation), dù dùng nguyên liệu tươi vẫn tốt hơn trong cả hai trường hợp."
-    },
-    {
-      chapter: 2,
-      text: "Extraction by scarification is specifically used to prepare which essential oils?",
-      options: ["Oil of lemon, oil of orange, and oil of bergamot", "Oil of turpentine, clove, and sandalwood", "Oil of peppermint, eucalyptus, and garlic", "Oil of valerian, cinnamon, and fennel"],
-      correct: 0,
-      explanation: "Phương pháp rạch/ép (scarification) dùng cho tinh dầu vỏ cam, chanh và bergamot vì túi tiết nằm ngay dưới bề mặt vỏ quả."
-    },
-    {
-      chapter: 2,
-      text: "What are the two principal methods of scarification?",
-      options: ["The sponge process and the ecuelle process", "Enfleurage and maceration", "Hydrodistillation and steam distillation", "Spraying and light petroleum extraction"],
-      correct: 0,
-      explanation: "Hai phương pháp chính của scarification là phương pháp dùng bọt biển (sponge process) và phương pháp bàn chông quay (ecuelle process)."
-    },
-    {
-      chapter: 2,
-      text: "Why is the sponge process for citrus peels carried out in cool, darkened rooms?",
-      options: ["To minimize the harmful effects of heat and light on the volatile oil", "To freeze the water layer before pressing", "To accelerate enzymatic hydrolysis of glycosides", "To evaporate the essential oil rapidly"],
-      correct: 0,
-      explanation: "Toàn bộ quy trình ép bằng bọt biển được thực hiện trong phòng mát, tối nhằm hạn chế tác hại của nhiệt độ và ánh sáng làm biến chất tinh dầu."
-    },
-    {
-      chapter: 2,
-      text: "How does the ecuelle process extract oil from citrus rinds?",
-      options: ["Rinds are ruptured mechanically using numerous pointed projections with a rotary movement", "Peels are boiled directly in concentrated ethanol", "Petals are layered onto cold lard plates", "Seeds are crushed with water to activate myrosin"],
-      correct: 0,
-      explanation: "Trong phương pháp ecuelle, vỏ quả được làm vỡ túi tiết bằng cơ học nhờ nhiều mũi nhọn kết hợp chuyển động xoay tròn để thu lấy tinh dầu."
-    },
-    {
-      chapter: 2,
-      text: "Which non-volatile solvents are used in the extraction of delicate floral volatile oils?",
-      options: ["Fine quality lard or olive oil", "Light petroleum or diethyl ether", "Distilled water or dilute hydrochloric acid", "Aqueous sodium hydroxide solution"],
-      correct: 0,
-      explanation: "Chiết bằng dung môi không bay hơi sử dụng mỡ lợn tinh khiết (lard) hoặc dầu ô liu (olive oil) chất lượng tốt."
-    },
-    {
-      chapter: 2,
-      text: "How is a commercial 'triple extract' prepared after saturating lard or olive oil with floral fragrance?",
-      options: ["By agitating the perfumed fat or oil with two or three successive portions of alcohol", "By distilling the lard directly over an open flame", "By filtering the oil through a sponge in sunlight", "By washing the fat with aqueous sodium hydroxide"],
-      correct: 0,
-      explanation: "Chất béo hoặc dầu đã bão hòa hương hoa được khuấy chiết 2–3 lần liên tiếp với cồn (alcohol) để hòa tan chất thơm; hỗn hợp dịch cồn thu được gọi là 'triple extract'."
-    },
-    {
-      chapter: 2,
-      text: "What are the three chief methods under extraction by non-volatile solvent?",
-      options: ["Enfleurage, maceration, and spraying process", "Sponge, ecuelle, and hydrodistillation", "Steam distillation, rectification, and chromatography", "Maceration, percolation, and Soxhlet extraction"],
-      correct: 0,
-      explanation: "Ba phương pháp chính dùng dung môi không bay hơi là ướp lạnh (enfleurage), ngâm nóng (maceration) và phun khí nóng (spraying process)."
-    },
-    {
-      chapter: 2,
-      text: "Which statement correctly describes the enfleurage process?",
-      options: ["Fresh flower petals are spread over a cold fatty layer or oil-soaked cloth until saturated", "Flowers are heated in lard over a boiling water bath", "Flowers are extracted with light petroleum at low temperature", "Citrus peels are pressed against a natural sponge"],
-      correct: 0,
-      explanation: "Trong enfleurage, cánh hoa tươi được trải lên lớp mỡ lạnh (hoặc vải tẩm dầu căng trên khung lưới) và thay hoa mới liên tục đến khi chất béo bão hòa hương."
-    },
-    {
-      chapter: 2,
-      text: "How does maceration differ from cold enfleurage in floral oil extraction?",
-      options: ["In maceration, lard or oil is heated over a water bath while flowers are stirred in", "Maceration uses light petroleum instead of fat", "Maceration uses pointed projections to puncture citrus rinds", "Maceration uses cold air without any solvent"],
-      correct: 0,
-      explanation: "Trong phương pháp maceration, mỡ lợn hoặc dầu được đun nóng trên bếp cách thủy (water bath), cho hoa vào khuấy liên tục rồi ép kiệt và thay mẻ hoa mới."
-    },
-    {
-      chapter: 2,
-      text: "In the spraying method for floral volatile oils, how is the perfume captured?",
-      options: ["Warm air passes through flowers, then oil or melted fat is sprayed into the perfume-laden air", "Cold water is sprayed onto dried roots", "Liquid nitrogen is sprayed onto citrus peels", "Alcohol vapor is sprayed into an empty condenser"],
-      correct: 0,
-      explanation: "Luồng không khí ấm thổi qua cột hoa để cuốn hương thơm, sau đó dầu hoặc mỡ nóng chảy được phun vào luồng khí mang hương này để hấp thụ tinh dầu."
-    },
-    {
-      chapter: 2,
-      text: "Which solvent is used in 'Extraction by Volatile Solvent' for flowers, and how is it removed?",
-      options: ["Light petroleum, distilled off at a low temperature", "Olive oil, removed by saponification", "Water, removed by freezing", "Chloroform, burned off at high temperature"],
-      correct: 0,
-      explanation: "Phương pháp dùng dung môi bay hơi chiết hoa bằng ether dầu hỏa nhẹ (light petroleum), sau đó cất thu hồi dung môi ở nhiệt độ thấp để lại tinh dầu."
-    },
-    {
-      chapter: 2,
-      text: "In the sponge process, after squeezing the peel against the sponge, how is the oil separated from water?",
-      options: ["The turbid liquid is allowed to stand so the oil separates from water and is collected", "The mixture is boiled to dryness", "Sodium hydroxide is added to precipitate the oil", "The liquid is passed through pointed rotary spikes"],
-      correct: 0,
-      explanation: "Chất lỏng đục gồm dầu và nước được để yên một thời gian ngắn để lớp tinh dầu tách khỏi nước rồi gạn thu lấy."
-    },
+      // Matching
+      {
+        id: "EP-26",
+        type: "matching",
+        question: "Match the plant with its main active principle or derivative:",
+        pairs: [
+          { left: "Digitalis purpurea / D. lanata", right: "Digoxin / cardiac glycosides" },
+          { left: "Atropa belladonna", right: "Atropine and scopolamine" },
+          { left: "Salix alba / S. viminalis", right: "Salicylic acid derivatives → Aspirin" },
+          { left: "Colchicum autumnale", right: "Colchicine" }
+        ],
+        answer: "See pairs"
+      },
+      {
+        id: "EP-27",
+        type: "matching",
+        question: "Match the substance with its main pharmacological action described in the text:",
+        pairs: [
+          { left: "Digoxin", right: "Treatment of cardiac dropsy / congestive heart failure" },
+          { left: "Atropine", right: "Competitive muscarinic antagonist; pupil dilation" },
+          { left: "Acetylsalicylic acid", right: "Improved oral tolerability for pain, fever, inflammation" },
+          { left: "Colchicine", right: "Inhibits tubulin polymerization; useful in acute gout" }
+        ],
+        answer: "See pairs"
+      },
 
-    // --- PART 3: 17.4 - 17.5 Terpenoids & Isoprene Rule (18 questions) ---
-    {
-      chapter: 3,
-      text: "Where was the term 'terpene' originally derived from?",
-      options: ["Turpentine, a volatile liquid isolated from pine trees", "Tropical fruits of the family Rutaceae", "Tetraterpenoid pigments in carrots", "Tannins isolated from oak bark"],
-      correct: 0,
-      explanation: "Thuật ngữ 'terpene' ban đầu được đặt cho các hợp chất phân lập từ nhựa thông/dầu thông (turpentine) lấy từ cây thông."
-    },
-    {
-      chapter: 3,
-      text: "Which terpenoid classes are steam volatile and form the chief constituents of essential oils?",
-      options: ["Monoterpenes and sesquiterpenes", "Diterpenes and triterpenes", "Tetraterpenoids (carotenoids)", "Polyterpenoids"],
-      correct: 0,
-      explanation: "Các monoterpene và sesquiterpene đơn giản bay hơi được theo hơi nước và là thành phần chính của tinh dầu; còn di- và triterpenoid không bay hơi theo hơi nước."
-    },
-    {
-      chapter: 3,
-      text: "Tetraterpenoids form a separate group of natural pigments known as:",
-      options: ["Carotenoids", "Alkaloids", "Flavonoids", "Saponins"],
-      correct: 0,
-      explanation: "Tetraterpenoid ($C_{40}H_{64}$) tạo thành một nhóm hợp chất riêng biệt gọi là Carotenoids."
-    },
-    {
-      chapter: 3,
-      text: "According to the modern definition, terpenoids are plant hydrocarbons of the general formula $(C_5H_8)_n$ as well as their:",
-      options: ["Oxygenated, hydrogenated, and dehydrogenated derivatives", "Only inorganic salt complexes", "Peptide and glycosidic polymers", "Sulfonated aromatic esters"],
-      correct: 0,
-      explanation: "Định nghĩa hiện đại xác định terpenoid là các hydrocarbon nguồn gốc thực vật có công thức chung $(C_5H_8)_n$ cùng các dẫn chất oxy hóa, hydro hóa và dehydro hóa của chúng."
-    },
-    {
-      chapter: 3,
-      text: "Who pointed out that terpenoids can be built up from isoprene units?",
-      options: ["Otto Wallach", "Louis Pasteur", "Alexander Fleming", "Dmitri Mendeleev"],
-      correct: 0,
-      explanation: "Otto Wallach là người chỉ ra rằng các phân tử terpenoid được cấu tạo từ các đơn vị isoprene ($C_5H_8$)."
-    },
-    {
-      chapter: 3,
-      text: "What does the Special Isoprene Rule state?",
-      options: ["Terpenoid molecules are constructed of two or more isoprene units joined in a 'head-to-tail' fashion", "All terpenoids must contain at least four aromatic rings", "Isoprene units always join exclusively in a 'head-to-head' manner", "Every terpenoid must have an odd number of carbon atoms"],
-      correct: 0,
-      explanation: "Quy tắc isoprene đặc biệt (Special Isoprene Rule) phát biểu rằng các đơn vị isoprene liên kết với nhau theo kiểu 'đầu nối đuôi' (head-to-tail)."
-    },
-    {
-      chapter: 3,
-      text: "Why is the Special Isoprene Rule considered a guiding principle rather than a fixed rule?",
-      options: ["Some terpenoids join tail-to-tail (e.g., carotenoids) or have carbon counts not divisible by five", "Isoprene does not exist in nature", "Only monoterpenes follow the rule", "Terpenoids never contain carbon-carbon double bonds"],
-      correct: 0,
-      explanation: "Ví dụ carotenoid nối đuôi-đuôi (tail-to-tail) ở trung tâm, và một số terpenoid có số nguyên tử carbon không phải bội số của 5."
-    },
-    {
-      chapter: 3,
-      text: "In the reading's structure examples, Myrcene and Farnesol represent which classes respectively?",
-      options: ["Myrcene is a monoterpene; Farnesol is a sesquiterpene", "Myrcene is a diterpene; Farnesol is a triterpene", "Both are tetraterpenoids", "Myrcene is a sesquiterpene; Farnesol is a monoterpene"],
-      correct: 0,
-      explanation: "Hình minh họa trong mục 17.4 ghi rõ Myrcene là monoterpene (2 đơn vị isoprene, C10) và Farnesol là sesquiterpene (3 đơn vị isoprene, C15)."
-    },
-    {
-      chapter: 3,
-      text: "According to Table 17.2, how many carbon atoms and isoprene units ($n$) are present in Sesquiterpenoids?",
-      options: ["15 carbon atoms ($n = 3$)", "10 carbon atoms ($n = 2$)", "20 carbon atoms ($n = 4$)", "30 carbon atoms ($n = 6$)"],
-      correct: 0,
-      explanation: "Sesquiterpenoids có công thức $C_{15}H_{24}$, gồm 15 nguyên tử carbon tương ứng $n = 3$."
-    },
-    {
-      chapter: 3,
-      text: "Which terpenoid class corresponds to 25 carbon atoms ($n = 5$) with formula $C_{25}H_{40}$?",
-      options: ["Sesterpenoids", "Sesquiterpenoids", "Diterpenoids", "Triterpenoids"],
-      correct: 0,
-      explanation: "Theo Bảng 17.2, $n = 5$ (25 carbon, $C_{25}H_{40}$) là nhóm Sesterpenoids."
-    },
-    {
-      chapter: 3,
-      text: "Triterpenoids have which molecular formula and value of $n$ in Table 17.2?",
-      options: ["$C_{30}H_{48}$ ($n = 6$)", "$C_{20}H_{32}$ ($n = 4$)", "$C_{40}H_{64}$ ($n = 8$)", "$C_{10}H_{16}$ ($n = 2$)"],
-      correct: 0,
-      explanation: "Triterpenoids có 30 nguyên tử carbon ($n = 6$), công thức phân tử $C_{30}H_{48}$."
-    },
-    {
-      chapter: 3,
-      text: "How are terpenoids further subdivided into acyclic, monocyclic, bicyclic, tricyclic, and tetracyclic subclasses?",
-      options: ["According to the number of rings present in the structure", "According to their solubility in cold water", "According to the number of nitrogen atoms", "According to their boiling point range"],
-      correct: 0,
-      explanation: "Mỗi lớp terpenoid được chia nhỏ tiếp dựa vào số vòng (number of rings) có trong cấu trúc phân tử (0 vòng là acyclic, 1 vòng là monocyclic, v.v.)."
-    },
-    {
-      chapter: 3,
-      text: "Diterpenoids and triterpenoids are typically obtained from which plant sources rather than steam distillation?",
-      options: ["Plant and tree gums and resins", "Fresh flower petals via cold enfleurage", "Aqueous distillate water", "Mustard seed husks"],
-      correct: 0,
-      explanation: "Di- và triterpenoid không bay hơi theo hơi nước và thường thu được từ gôm và nhựa cây (plant and tree gums and resins)."
-    },
+      // Short Answer / Fill blank
+      {
+        id: "EP-28",
+        type: "short_answer",
+        question: "What does the term “dropsy” refer to in the historical context of the text?",
+        answer: "Edema of congestive heart failure / cardiac dropsy"
+      },
+      {
+        id: "EP-29",
+        type: "short_answer",
+        question: "Why is chemical synthesis of digoxin considered impractical?",
+        answer: "It is too difficult and expensive"
+      },
+      {
+        id: "EP-30",
+        type: "fill_blank",
+        question: "Atropine is the prototype of a competitive antagonist at the __________ receptor of the muscarinic type.",
+        answer: "acetylcholine"
+      },
+      {
+        id: "EP-31",
+        type: "fill_blank",
+        question: "Acetylation of salicylic acid yields __________ (ASA, Aspirin®).",
+        answer: "acetylsalicylic acid"
+      },
+      {
+        id: "EP-32",
+        type: "short_answer",
+        question: "Name two plants (besides foxglove) that were traditionally used to treat dropsy.",
+        answer: "Lily of the valley (Convallaria majalis), christmas rose (Helleborus niger), spindletree (Evonymus europaeus)"
+      },
+      {
+        id: "EP-33",
+        type: "short_answer",
+        question: "What cosmetic use of Atropa belladonna extracts was known in antiquity?",
+        answer: "Pupillary dilation (to enhance female attractiveness)"
+      },
+      {
+        id: "EP-34",
+        type: "true_false_not_given",
+        question: "Hundreds of plant species promoted in medieval herbal formularies have documented effectiveness in modern medicine.",
+        answer: "FALSE",
+        explanation: "Only few of the hundreds have survived as drugs with documented effectiveness."
+      },
+      {
+        id: "EP-35",
+        type: "true_false_not_given",
+        question: "Colchicine is found only in the flowers of Colchicum autumnale.",
+        answer: "FALSE",
+        explanation: "All parts of the plant contain the alkaloid colchicine."
+      },
+      {
+        id: "EP-36",
+        type: "multiple_choice",
+        question: "The active principles in the plants used for dropsy are steroids with sugar molecules attached at which carbon?",
+        options: ["A. C1", "B. C3", "C. C5", "D. C17"],
+        answer: "B"
+      },
+      {
+        id: "EP-37",
+        type: "short_answer",
+        question: "What improved the oral tolerability of salicylic acid?",
+        answer: "Acetylation (to form acetylsalicylic acid / Aspirin)"
+      },
+      {
+        id: "EP-38",
+        type: "true_false_not_given",
+        question: "The text states that digitalis leaves tea is still the preferred form of administration today.",
+        answer: "NOT GIVEN",
+        explanation: "The text only mentions historical introduction by Withering; modern use focuses on digoxin."
+      },
+      {
+        id: "EP-39",
+        type: "multiple_choice",
+        question: "Which family does the autumn crocus belong to?",
+        options: [
+          "A. Solanaceae",
+          "B. Lily family",
+          "C. Willow family",
+          "D. Foxglove family"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-40",
+        type: "short_answer",
+        question: "List the four plants mentioned that were used since the Middle Ages to treat dropsy.",
+        answer: "Foxglove (Digitalis sp.), lily of the valley (Convallaria majalis), christmas rose (Helleborus niger), spindletree (Evonymus europaeus)"
+      },
+      {
+        id: "EP-41",
+        type: "true_false_not_given",
+        question: "Scopolamine is also found in Atropa belladonna.",
+        answer: "TRUE",
+        explanation: "Stated: contains the alkaloids atropine ... and scopolamine, in smaller amounts."
+      },
+      {
+        id: "EP-42",
+        type: "multiple_choice",
+        question: "The main modern clinical use of digoxin mentioned is related to:",
+        options: [
+          "A. Pain relief",
+          "B. Congestive heart failure / cardiac glycosides",
+          "C. Gout treatment",
+          "D. Pupil dilation"
+        ],
+        answer: "B"
+      },
+      {
+        id: "EP-43",
+        type: "fill_blank",
+        question: "Colchicine is described as a __________ poison because it prevents mitosis.",
+        answer: "spindle"
+      },
+      {
+        id: "EP-44",
+        type: "short_answer",
+        question: "What is the French origin meaning of the word “drug” according to related readings (and consistent with historical plant use)?",
+        answer: "Dried herb (from French “drogue”)"
+      },
+      {
+        id: "EP-45",
+        type: "true_false_not_given",
+        question: "All cardiac glycosides are equally useful clinically according to the text.",
+        answer: "FALSE",
+        explanation: "Digoxin is described as proven clinically most useful among all available cardiac glycosides."
+      }
+    ]
+  },
 
-    // --- PART 4: 17.6 - 17.9 Evaluation, Tests, Storage & Uses (18 questions) ---
-    {
-      chapter: 4,
-      text: "Why does essential oil composition vary considerably among different manufacturers?",
-      options: ["Environmental factors (sunlight, rainfall) and manufacturing processes affect chemical composition", "Volatile oils are synthetic mixtures with no standard formula", "Distillation destroys all terpenes randomly", "Plants produce identical oils regardless of climate"],
-      correct: 0,
-      explanation: "Mục 17.6 giải thích điều kiện môi trường (ánh sáng mặt trời, lượng mưa) và quy trình sản xuất gây ra sự biến thiên đáng kể về chất lượng tinh dầu."
-    },
-    {
-      chapter: 4,
-      text: "Which physical measurements are used in the evaluation of essential oils?",
-      options: ["Optical rotation, relative density, and refractive index", "Melting point, ash value, and swelling index", "Hemolytic index and foaming index", "Saponification value and acid value only"],
-      correct: 0,
-      explanation: "Đo lường vật lý để đánh giá tinh dầu gồm góc quay cực (optical rotation), tỷ trọng tương đối (relative density) và chỉ số khúc xạ (refractive index)."
-    },
-    {
-      chapter: 4,
-      text: "Which analytical technique is used to determine the proportions of individual components in volatile oils?",
-      options: ["Chromatographic techniques", "Gravimetric ash determination", "Titration with EDTA", "Flame photometry"],
-      correct: 0,
-      explanation: "Các kỹ thuật sắc ký (chromatographic techniques) được dùng để xác định tỷ lệ từng cấu tử riêng lẻ trong tinh dầu."
-    },
-    {
-      chapter: 4,
-      text: "How are the ketone and aldehyde contents of volatile oils determined quantitatively?",
-      options: ["Reaction with hydroxylamine hydrochloride (oxime formation) and titration of liberated acid", "Precipitation with picric acid and weighing", "Saponification with alcoholic potassium hydroxide", "Reaction with ninhydrin to measure purple absorbance"],
-      correct: 0,
-      explanation: "Hàm lượng ketone và aldehyde được định lượng bằng phản ứng với hydroxylamine hydrochloride tạo oxime, sau đó chuẩn độ lượng acid giải phóng ra."
-    },
-    {
-      chapter: 4,
-      text: "What color develops when a thin section of a volatile oil-containing drug is treated with alcoholic Sudan III solution?",
-      options: ["Red color", "Deep violet color", "Bright green precipitate", "No color change"],
-      correct: 0,
-      explanation: "Theo mục 17.7, vi phẫu dược liệu chứa tinh dầu cho màu đỏ (red colour) khi xử lý với dung dịch Sudan III trong cồn."
-    },
-    {
-      chapter: 4,
-      text: "Besides alcoholic Sudan III, which reagent produces a red color with thin sections of drugs containing volatile oils?",
-      options: ["Tincture of alkanna", "Benedict's reagent", "Biuret reagent", "Dragendorff's reagent"],
-      correct: 0,
-      explanation: "Cồn thuốc alkanna (tincture of alkanna) cũng tạo màu đỏ đặc trưng khi thử vi phẫu dược liệu chứa tinh dầu."
-    },
-    {
-      chapter: 4,
-      text: "What changes occur when volatile oils undergo oxidation during improper storage?",
-      options: ["Change in color, increase in viscosity, and change in odor", "Decrease in viscosity and complete loss of color", "Conversion into water-soluble amino acids", "Immediate crystallization into pure glucose"],
-      correct: 0,
-      explanation: "Khi bị oxy hóa do không khí, ẩm và ánh sáng, tinh dầu biến đổi màu sắc, tăng độ nhớt (increase in viscosity) và biến đổi mùi."
-    },
-    {
-      chapter: 4,
-      text: "Which storage conditions are recommended in Section 17.8 for volatile oils?",
-      options: ["Well-closed, completely filled containers away from light in cool places", "Half-filled clear glass bottles in direct sunlight", "Open wide-mouth jars at warm room temperature", "Permeable paper bags in humid rooms"],
-      correct: 0,
-      explanation: "Tinh dầu phải được bảo quản trong chai lọ đậy kín hoàn toàn, nạp đầy (completely filled để giảm không khí), tránh ánh sáng và để nơi mát."
-    },
-    {
-      chapter: 4,
-      text: "Which volatile oil is listed as an anthelmintic in Section 17.9?",
-      options: ["Chenopodium oil", "Eucalyptus oil", "Clove oil", "Lemongrass oil"],
-      correct: 0,
-      explanation: "Theo danh sách ứng dụng điều trị mục 17.9, tinh dầu giun (Chenopodium oil) có tác dụng trị giun sán (anthelmintic)."
-    },
-    {
-      chapter: 4,
-      text: "Match the volatile oil drug with its therapeutic use according to Section 17.9:",
-      options: ["Juniper — Diuretic; Jatamansi — Sedative", "Clove — Anthelmintic; Eucalyptus — Sedative", "Citronella — Local anesthetic; Lemongrass — Diuretic", "Umbelliferous fruits — Insect repellent; Juniper — Source of vitamin A"],
-      correct: 0,
-      explanation: "Theo mục 17.9: Juniper dùng lợi tiểu (diuretic) và Jatamansi dùng an thần (sedative)."
-    },
-    {
-      chapter: 4,
-      text: "Which volatile oil is used as a local anesthetic and which is used as a counter-irritant in Section 17.9?",
-      options: ["Clove (local anesthetic) and Oil of wintergreen (counter-irritant)", "Eucalyptus (local anesthetic) and Citronella (counter-irritant)", "Lemongrass (local anesthetic) and Juniper (counter-irritant)", "Jatamansi (local anesthetic) and Chenopodium (counter-irritant)"],
-      correct: 0,
-      explanation: "Tinh dầu đinh hương (Clove) dùng gây tê tại chỗ (local anesthetic), còn dầu lộc đề xanh (Oil of wintergreen) dùng làm chất kích ứng đối kháng (counter-irritant)."
-    },
-    {
-      chapter: 4,
-      text: "According to Section 17.9, Lemongrass oil is utilized therapeutically as:",
-      options: ["A source of vitamin A", "An anthelmintic", "A local anesthetic", "A sedative"],
-      correct: 0,
-      explanation: "Mục 17.9 liệt kê Lemongrass là nguồn cung cấp vitamin A (Source of vitamin A)."
-    },
-    {
-      chapter: 4,
-      text: "Which drug is listed as an insect repellent and which is listed as an antiseptic in Section 17.9?",
-      options: ["Citronella (insect repellent) and Eucalyptus (antiseptic)", "Turpentine (insect repellent) and Jatamansi (antiseptic)", "Clove (insect repellent) and Lemongrass (antiseptic)", "Juniper (insect repellent) and Wintergreen (antiseptic)"],
-      correct: 0,
-      explanation: "Tinh dầu sả chanh (Citronella) dùng đuổi côn trùng (insect repellent), còn tinh dầu bạch đàn (Eucalyptus) dùng sát khuẩn (antiseptic)."
-    },
+  // ============================================================
+  // SECTION 2: Drug and Active Principle
+  // ============================================================
+  drugAndActivePrinciple: {
+    title: "Drug and Active Principle",
+    source: "Color Atlas of Pharmacology – Thieme",
+    questions: [
+      {
+        id: "DAP-01",
+        type: "true_false_not_given",
+        question: "Until the end of the 19th century, most medicines were natural organic or inorganic products.",
+        answer: "TRUE",
+        explanation: "Explicitly stated."
+      },
+      {
+        id: "DAP-02",
+        type: "true_false_not_given",
+        question: "The scientific term “drug” always implies a high potential for physical dependence and abuse.",
+        answer: "FALSE",
+        explanation: "Colloquially yes, but scientifically the term implies nothing about the quality of action."
+      },
+      {
+        id: "DAP-03",
+        type: "true_false_not_given",
+        question: "Tinctures contain the complete spectrum of substances present in the plant.",
+        answer: "FALSE",
+        explanation: "Tinctures contain only those substances soluble in alcohol."
+      },
+      {
+        id: "DAP-04",
+        type: "true_false_not_given",
+        question: "Morphine was first isolated from opium in 1804 by F.W. Sertürner.",
+        answer: "TRUE",
+        explanation: "Explicitly stated."
+      },
+      {
+        id: "DAP-05",
+        type: "true_false_not_given",
+        question: "The dose of an individual constituent in a natural product is always constant.",
+        answer: "FALSE",
+        explanation: "It is subject to large variations depending on geographical origin, time of harvesting, and storage."
+      },
+      {
+        id: "DAP-06",
+        type: "true_false_not_given",
+        question: "Fentanyl is less potent than morphine.",
+        answer: "FALSE",
+        explanation: "Fentanyl requires a dose only 0.1–0.05 times that of morphine (i.e., more potent)."
+      },
+      {
+        id: "DAP-07",
+        type: "true_false_not_given",
+        question: "Carfentanyl is used in veterinary anesthesia of large animals and is about 5000 times more potent than morphine.",
+        answer: "TRUE",
+        explanation: "Directly stated."
+      },
+      {
+        id: "DAP-08",
+        type: "true_false_not_given",
+        question: "One aim of isolating active principles is to enable chemical synthesis and independence from limited natural supplies.",
+        answer: "TRUE",
+        explanation: "Listed as aim number 4."
+      },
+      {
+        id: "DAP-09",
+        type: "true_false_not_given",
+        question: "Opium tincture is also known as laudanum.",
+        answer: "TRUE",
+        explanation: "Shown in the figure description."
+      },
+      {
+        id: "DAP-10",
+        type: "true_false_not_given",
+        question: "Drying plants was done only to make them lighter for transport.",
+        answer: "FALSE",
+        explanation: "The main purpose mentioned is to secure a supply year-round, not merely at harvest time."
+      },
 
-    // --- PART 5: 17.10 - 17.11 Hydrocarbons, Alcohols & Turpentine Oil (19 questions) ---
-    {
-      chapter: 5,
-      text: "Which monocyclic monoterpene hydrocarbon is the most widely distributed across Citrus, Mint, Caraway, and Coriander oils?",
-      options: ["Limonene", "Pinene", "Cadinene", "Borneol"],
-      correct: 0,
-      explanation: "Limonene là monoterpene đơn vòng phân bố rộng rãi nhất, có mặt trong tinh dầu họ Cam quýt, Bạc hà, Thì là Ba Tư, Rau mùi..."
-    },
-    {
-      chapter: 5,
-      text: "How are Pinene and Sabinene classified structurally in Section 17.10?",
-      options: ["Dicyclic monoterpenes", "Acyclic sesquiterpenes", "Triterpene alcohols", "Phenolic ethers"],
-      correct: 0,
-      explanation: "Cả pinene và sabinene (nhóm thujane) đều là các monoterpene hai vòng (dicyclic monoterpenes)."
-    },
-    {
-      chapter: 5,
-      text: "Which compounds are examples of sesquiterpene hydrocarbons mentioned in Section 17.10?",
-      options: ["Cadinene and beta-caryophyllene", "Limonene and myrcene", "Menthol and linalool", "Geraniol and borneol"],
-      correct: 0,
-      explanation: "Cadinene (trong nhựa thông bách xù) và $\beta$-caryophyllene (trong ngải cứu, bạc hà, quế, đinh hương) là các sesquiterpene hydrocarbon."
-    },
-    {
-      chapter: 5,
-      text: "What is the botanical source and family of Turpentine oil?",
-      options: ["Oleoresin from Pinus longifolia Roxb and other Pinus species (Pinaceae)", "Dried flower buds of Syzygium aromaticum (Myrtaceae)", "Fresh leaves of Mentha piperita (Lamiaceae)", "Ripe seeds of Brassica nigra (Brassicaceae)"],
-      correct: 0,
-      explanation: "Dầu thông (Turpentine oil) thu được bằng cách cất nhựa dầu (oleoresin) của cây Pinus longifolia Roxb và các loài Pinus khác thuộc họ Thông (Pinaceae)."
-    },
-    {
-      chapter: 5,
-      text: "Why is distilled turpentine oil treated with an aqueous solution of sodium hydroxide during preparation?",
-      options: ["To remove traces of phenols, cresol, and resin acids", "To convert alpha-pinene into menthol", "To saponify triglycerides into soap", "To increase the water solubility of the oil"],
-      correct: 0,
-      explanation: "Xử lý dầu thông thô với dung dịch NaOH loãng giúp loại bỏ vết phenol, cresol và các acid nhựa, tạo thành dầu thông tinh chế (rectified turpentine oil)."
-    },
-    {
-      chapter: 5,
-      text: "What are the chief chemical constituents of Turpentine oil?",
-      options: ["Alpha- and beta-pinene with small quantities of camphene and limonene", "Eugenol and caryophyllene oxide", "Cinnamaldehyde and eugenol", "Menthol and menthone"],
-      correct: 0,
-      explanation: "Dầu thông chứa hơn 40 terpene, trong đó thành phần chính là $\alpha$- và $\beta$-pinene cùng lượng nhỏ camphene, limonene..."
-    },
-    {
-      chapter: 5,
-      text: "Which of the following is an internal adverse effect of Turpentine oil mentioned in the text?",
-      options: ["Irritation of the kidney when taken internally", "Severe hypoglycemia", "Permanent discoloration of teeth", "Bone marrow suppression"],
-      correct: 0,
-      explanation: "Mục Uses của Turpentine oil cảnh báo khi dùng đường uống (taken internally), dầu thông gây kích ứng thận (irritation of kidney)."
-    },
-    {
-      chapter: 5,
-      text: "What are the common adulterants of Turpentine oil and how are they detected?",
-      options: ["Petroleum jelly (low weight per mL) and resin oil (leaves a fatty stain on paper)", "Distilled water (high optical rotation) and glucose (Benedict's test)", "Starch (iodine test) and calcium carbonate (effervescence)", "Menthol (cooling taste) and camphor (sublimation)"],
-      correct: 0,
-      explanation: "Dầu thông thường bị giả mạo bằng vaselin/petroleum jelly (phát hiện nhờ tỷ trọng/weight per mL thấp) và dầu nhựa/resin oil (để lại vết mỡ khi thử trên giấy)."
-    },
-    {
-      chapter: 5,
-      text: "Which marketed pharmaceutical products contain Turpentine oil according to the text?",
-      options: ["Rumalaya gel and Pain balm (Himalaya Drug Company)", "Aspirin cardio and Panadol extra", "Betadine solution and Strepsils", "Voltaren emulgel and Salonpas"],
-      correct: 0,
-      explanation: "Dầu thông là một thành phần trong chế phẩm Rumalaya gel và Pain balm của hãng Himalaya Drug Company."
-    },
-    {
-      chapter: 5,
-      text: "Why are lower aliphatic alcohols (methyl, ethyl, isobutyl, isoamyl) absent from steam-distilled volatile oils?",
-      options: ["They are soluble in water and washed away during steam distillation", "They decompose completely above 40°C", "They are insoluble in all organic solvents", "They polymerize into solid resins"],
-      correct: 0,
-      explanation: "Các alcohol mạch thẳng phân tử thấp (methyl, ethyl, isobutyl, isoamyl...) tan được trong nước nên bị rửa trôi theo nước ngưng trong quá trình cất lôi cuốn hơi nước."
-    },
-    {
-      chapter: 5,
-      text: "Which group of compounds consists of acyclic terpene alcohols found in natural volatile oils?",
-      options: ["Geraniol, linalool, and citronellol", "Menthol and alpha-terpineol", "Borneol and camphor", "Zingiberol and santalols"],
-      correct: 0,
-      explanation: "Geraniol, linalool và citronellol là các alcohol terpene mạch hở (acyclic alcohols) phổ biến trong nhiều tinh dầu tự nhiên."
-    },
-    {
-      chapter: 5,
-      text: "Classify menthol, borneol, and zingiberol according to Section 17.11:",
-      options: ["Menthol: monocyclic alcohol; Borneol: dicyclic alcohol; Zingiberol: sesquiterpene alcohol", "Menthol: acyclic alcohol; Borneol: monocyclic alcohol; Zingiberol: triterpene", "All three are phenolic ethers", "Menthol: sesquiterpene; Borneol: acyclic; Zingiberol: dicyclic"],
-      correct: 0,
-      explanation: "Theo mục 17.11: menthol (từ bạc hà) là monocyclic alcohol; borneol là dicyclic terpene alcohol; zingiberol, santalols và artemisin là sesquiterpene alcohols."
-    }
-  ];
+      // Multiple Choice
+      {
+        id: "DAP-11",
+        type: "multiple_choice",
+        question: "The word “drug” originally comes from the French word meaning:",
+        options: [
+          "A. Medicine",
+          "B. Dried herb",
+          "C. Poison",
+          "D. Extract"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-12",
+        type: "multiple_choice",
+        question: "Which of the following is NOT listed as an alkaloid in opium tincture?",
+        options: [
+          "A. Morphine",
+          "B. Codeine",
+          "C. Quinine",
+          "D. Papaverine"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DAP-13",
+        type: "multiple_choice",
+        question: "What is the first listed aim of isolating active principles?",
+        options: [
+          "A. Chemical synthesis",
+          "B. Identification of the active ingredient(s)",
+          "C. Ensuring precise dosage",
+          "D. Analysis of structure–activity relationships"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-14",
+        type: "multiple_choice",
+        question: "Fentanyl requires a dose approximately how many times smaller than morphine?",
+        options: [
+          "A. 2–5 times",
+          "B. 10–20 times",
+          "C. 0.1–0.05 times (i.e. 10–20 times more potent)",
+          "D. Equal dose"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DAP-15",
+        type: "multiple_choice",
+        question: "Soaking plants in alcohol produces a:",
+        options: [
+          "A. Decoction",
+          "B. Tincture",
+          "C. Infusion",
+          "D. Powder"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-16",
+        type: "multiple_choice",
+        question: "Which factor does NOT affect the dose of an individual constituent in a natural product according to the text?",
+        options: [
+          "A. Geographical origin (biotope)",
+          "B. Time of harvesting",
+          "C. Conditions and length of storage",
+          "D. The patient’s age"
+        ],
+        answer: "D"
+      },
+      {
+        id: "DAP-17",
+        type: "multiple_choice",
+        question: "Raw opium is obtained by:",
+        options: [
+          "A. Drying the leaves of Papaver somniferum",
+          "B. Slashing the unripe seed capsules and collecting the milky exudate",
+          "C. Extracting the roots with alcohol",
+          "D. Distilling the flowers"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-18",
+        type: "multiple_choice",
+        question: "One major advantage of using chemically pure constituents is:",
+        options: [
+          "A. They are always cheaper",
+          "B. Precise and constant dosage can be ensured",
+          "C. They never cause side effects",
+          "D. They are always more potent"
+        ],
+        answer: "B"
+      },
 
-  const letters = ["A", "B", "C", "D"];
+      // Matching & Short Answer
+      {
+        id: "DAP-19",
+        type: "matching",
+        question: "Match the aim of isolating active principles with its description:",
+        pairs: [
+          { left: "1. Identification", right: "Identify the active ingredient(s)" },
+          { left: "2. Pharmacodynamics & pharmacokinetics", right: "Analyze biological effects and fate in the body" },
+          { left: "3. Dosage precision", right: "Ensure precise and constant dosage" },
+          { left: "4. Synthesis possibility", right: "Independence from natural supplies + SAR studies" }
+        ],
+        answer: "See pairs"
+      },
+      {
+        id: "DAP-20",
+        type: "short_answer",
+        question: "Name at least four alkaloids found in opium tincture.",
+        answer: "Morphine, codeine, narcotine (noscapine), papaverine, narceine"
+      },
+      {
+        id: "DAP-21",
+        type: "short_answer",
+        question: "What is the approximate potency ratio of carfentanyl compared to morphine?",
+        answer: "About 5000 times more potent"
+      },
+      {
+        id: "DAP-22",
+        type: "fill_blank",
+        question: "Using a natural product usually entails administration of a number of substances possibly possessing very different __________.",
+        answer: "activities"
+      },
+      {
+        id: "DAP-23",
+        type: "true_false_not_given",
+        question: "Modification of the chemical structure of natural substances has frequently led to pharmaceuticals with enhanced potency.",
+        answer: "TRUE",
+        explanation: "Explicitly stated with the fentanyl example."
+      },
+      {
+        id: "DAP-24",
+        type: "multiple_choice",
+        question: "In the scientific sense, which of the following can be called a “drug”?",
+        options: [
+          "A. Only substances causing dependence",
+          "B. Dried leaves of peppermint",
+          "C. Only synthetic chemicals",
+          "D. Only pure isolated compounds"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-25",
+        type: "short_answer",
+        question: "Who isolated morphine from opium and in which year?",
+        answer: "F.W. Sertürner in 1804"
+      },
+      {
+        id: "DAP-26",
+        type: "true_false_not_given",
+        question: "Tinctures are prepared by soaking plants in water.",
+        answer: "FALSE",
+        explanation: "They are prepared by soaking in alcohol (ethanol)."
+      },
+      {
+        id: "DAP-27",
+        type: "multiple_choice",
+        question: "The process of isolating active principles began systematically after the isolation of:",
+        options: [
+          "A. Quinine",
+          "B. Morphine",
+          "C. Atropine",
+          "D. Digoxin"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-28",
+        type: "fill_blank",
+        question: "Derivatives of the original constituent may be synthesized in an effort to __________ pharmacological properties.",
+        answer: "optimize"
+      },
+      {
+        id: "DAP-29",
+        type: "short_answer",
+        question: "Why can the relative proportions of individual constituents in a natural product vary considerably?",
+        answer: "Depending on geographical origin (biotope), time of harvesting, or conditions and length of storage"
+      },
+      {
+        id: "DAP-30",
+        type: "true_false_not_given",
+        question: "Pharmaceutical laboratories subsequently isolated the active principles of many other natural products in chemically pure form.",
+        answer: "TRUE",
+        explanation: "Stated after mentioning Sertürner’s isolation of morphine."
+      },
+      {
+        id: "DAP-31",
+        type: "multiple_choice",
+        question: "Which of the following is an example of a dried animal or plant product that could historically be called a drug?",
+        options: [
+          "A. Only synthetic tablets",
+          "B. Dried milky exudate of Papaver somniferum (raw opium)",
+          "C. Only injectable solutions",
+          "D. Only pure crystals"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-32",
+        type: "short_answer",
+        question: "What are the four main aims of isolating active principles listed in the text?",
+        answer: "1. Identification of active ingredient(s); 2. Analysis of pharmacodynamics and pharmacokinetics; 3. Ensuring precise and constant dosage; 4. Possibility of chemical synthesis and SAR analysis"
+      },
+      {
+        id: "DAP-33",
+        type: "true_false_not_given",
+        question: "All natural products used as medicines before the 19th century were completely non-toxic.",
+        answer: "NOT GIVEN",
+        explanation: "The text mentions they might contain substances with healing properties or toxic effects, but does not claim they were non-toxic."
+      },
+      {
+        id: "DAP-34",
+        type: "fill_blank",
+        question: "Alkaloids are basic substances of __________ origin.",
+        answer: "plant"
+      },
+      {
+        id: "DAP-35",
+        type: "multiple_choice",
+        question: "The example of fentanyl and carfentanyl illustrates the value of:",
+        options: [
+          "A. Keeping the natural structure unchanged",
+          "B. Chemical modification to enhance potency",
+          "C. Using only plant extracts",
+          "D. Avoiding synthetic derivatives"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-36",
+        type: "short_answer",
+        question: "What does “laudanum” refer to in the figure?",
+        answer: "Opium tincture"
+      },
+      {
+        id: "DAP-37",
+        type: "true_false_not_given",
+        question: "Isolation of pure active principles allows independence from limited natural supplies.",
+        answer: "TRUE",
+        explanation: "Stated as one of the aims."
+      },
+      {
+        id: "DAP-38",
+        type: "multiple_choice",
+        question: "Which statement about natural product dosage is correct?",
+        options: [
+          "A. Dosage is always precise and reproducible",
+          "B. Dosage of individual constituents can vary greatly",
+          "C. All constituents have the same activity",
+          "D. Storage conditions have no effect"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-39",
+        type: "fill_blank",
+        question: "The extraction of morphine from opium by Sertürner marked the beginning of isolating active principles in __________ pure form.",
+        answer: "chemically"
+      },
+      {
+        id: "DAP-40",
+        type: "short_answer",
+        question: "Give one example of a dried plant product (besides opium) that could be called a drug in the original sense.",
+        answer: "Dried leaves of peppermint / dried lime blossoms / dried flowers and leaves of female cannabis plant"
+      },
+      {
+        id: "DAP-41",
+        type: "true_false_not_given",
+        question: "The text suggests that using crude natural products is always preferable to pure compounds.",
+        answer: "FALSE",
+        explanation: "The aims of isolation emphasize advantages of pure compounds (precise dosage, synthesis, SAR, etc.)."
+      },
+      {
+        id: "DAP-42",
+        type: "multiple_choice",
+        question: "Pharmacokinetics refers to:",
+        options: [
+          "A. Only the therapeutic effect",
+          "B. The fate of the drug in the body (absorption, distribution, metabolism, excretion)",
+          "C. Only toxicity",
+          "D. Only receptor binding"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DAP-43",
+        type: "short_answer",
+        question: "What is the main problem when administering a natural product or extract?",
+        answer: "Administration of multiple substances with possibly different activities + variable dosage of individual constituents"
+      },
+      {
+        id: "DAP-44",
+        type: "true_false_not_given",
+        question: "Carfentanyl is used in human clinical anesthesia.",
+        answer: "NOT GIVEN",
+        explanation: "The text only mentions its use in veterinary anesthesia of large animals."
+      },
+      {
+        id: "DAP-45",
+        type: "fill_blank",
+        question: "Starting with the extraction of morphine from opium in 1804, the active principles of many other natural products were subsequently isolated in chemically __________ form.",
+        answer: "pure"
+      }
+    ]
+  },
 
-  const hash = value => {
-    let result = 0;
-    for (let index = 0; index < value.length; index += 1) {
-      result = (Math.imul(result, 31) + value.charCodeAt(index)) >>> 0;
-    }
-    return result;
-  };
+  // ============================================================
+  // SECTION 3: Drug Development
+  // ============================================================
+  drugDevelopment: {
+    title: "Drug Development",
+    source: "Color Atlas of Pharmacology – Thieme",
+    questions: [
+      {
+        id: "DD-01",
+        type: "true_false_not_given",
+        question: "The drug development process starts with the synthesis of novel chemical compounds.",
+        answer: "TRUE",
+        explanation: "First sentence of the text."
+      },
+      {
+        id: "DD-02",
+        type: "true_false_not_given",
+        question: "Only synthetic compounds are used as sources for new drugs; natural sources are no longer important.",
+        answer: "FALSE",
+        explanation: "The text lists plants, animal tissues, microbial cultures, human cell cultures, and gene technology as sources."
+      },
+      {
+        id: "DD-03",
+        type: "true_false_not_given",
+        question: "Preclinical testing is sufficient to fully replicate complex biological processes in the intact organism.",
+        answer: "FALSE",
+        explanation: "The text states that models (cell cultures, isolated organs, etc.) invariably fall short of replicating complex processes; whole-animal testing is required."
+      },
+      {
+        id: "DD-04",
+        type: "true_false_not_given",
+        question: "Only a very small fraction of new compounds prove potentially fit for use in humans at the preclinical stage.",
+        answer: "TRUE",
+        explanation: "Explicitly stated."
+      },
+      {
+        id: "DD-05",
+        type: "true_false_not_given",
+        question: "Phase I clinical trials are conducted on selected patients with the target disease.",
+        answer: "FALSE",
+        explanation: "Phase I is on healthy subjects; Phase II is on selected patients."
+      },
+      {
+        id: "DD-06",
+        type: "true_false_not_given",
+        question: "Ultimately, only one new drug typically remains from some 10,000 newly synthesized substances.",
+        answer: "TRUE",
+        explanation: "Directly stated."
+      },
+      {
+        id: "DD-07",
+        type: "true_false_not_given",
+        question: "Clinical trials do not require ethical review.",
+        answer: "FALSE",
+        explanation: "They are subject to review and approval by institutional ethics committees according to international codes (Helsinki, Tokyo, Venice)."
+      },
+      {
+        id: "DD-08",
+        type: "true_false_not_given",
+        question: "After approval, regulatory surveillance continues in the form of Phase IV studies.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "DD-09",
+        type: "true_false_not_given",
+        question: "The FDA is the regulatory body in the United States.",
+        answer: "TRUE",
+        explanation: "Mentioned."
+      },
+      {
+        id: "DD-10",
+        type: "true_false_not_given",
+        question: "If a new drug offers hardly any advantage over existing ones, the cost–benefit relationship can be ignored.",
+        answer: "FALSE",
+        explanation: "The text says the cost–benefit relationship needs to be kept in mind."
+      },
 
-  const shuffle = (values, seed) => {
-    const result = [...values];
-    let state = seed || 1;
-    for (let index = result.length - 1; index > 0; index -= 1) {
-      state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
-      const target = state % (index + 1);
-      [result[index], result[target]] = [result[target], result[index]];
-    }
-    return result;
-  };
+      // Multiple Choice
+      {
+        id: "DD-11",
+        type: "multiple_choice",
+        question: "Which of the following is an example of a drug obtained by gene technology?",
+        options: [
+          "A. Penicillin G",
+          "B. Heparin",
+          "C. Human insulin",
+          "D. Cardiac glycosides"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DD-12",
+        type: "multiple_choice",
+        question: "Toxicological investigations evaluate all of the following EXCEPT:",
+        options: [
+          "A. Acute or chronic toxicity",
+          "B. Genotoxicity / mutagenicity",
+          "C. Therapeutic efficacy in patients",
+          "D. Carcinogenicity and teratogenicity"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DD-13",
+        type: "multiple_choice",
+        question: "Phase I studies mainly aim to determine:",
+        options: [
+          "A. Therapeutic efficacy in large patient groups",
+          "B. Effects on body functions, dose definition, and pharmacokinetics in healthy subjects",
+          "C. Comparison with standard therapy",
+          "D. Long-term benefit–risk ratio"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-14",
+        type: "multiple_choice",
+        question: "Phase III involves:",
+        options: [
+          "A. Only healthy volunteers",
+          "B. A larger group of patients compared with conventional treatments",
+          "C. Only animal testing",
+          "D. Only in-vitro assays"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-15",
+        type: "multiple_choice",
+        question: "Which regulatory body is mentioned for the European Union?",
+        options: [
+          "A. FDA",
+          "B. Health Protection Branch Drugs Directorate",
+          "C. EU Commission in conjunction with the European Agency for the Evaluation of Medicinal Products",
+          "D. WHO"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DD-16",
+        type: "multiple_choice",
+        question: "Initial screening in preclinical testing may employ:",
+        options: [
+          "A. Only whole-animal experiments",
+          "B. Receptor binding assays, cell cultures, isolated cells and organs",
+          "C. Only Phase III trials",
+          "D. Only post-marketing studies"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-17",
+        type: "multiple_choice",
+        question: "According to the figure description, approximately how many substances enter Phase 1 from the original 10,000?",
+        options: [
+          "A. 1000",
+          "B. 100",
+          "C. 10",
+          "D. 1"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DD-18",
+        type: "multiple_choice",
+        question: "The final long-term benefit–risk evaluation occurs during:",
+        options: [
+          "A. Preclinical testing",
+          "B. Phase I",
+          "C. Phase III",
+          "D. Phase IV / general use"
+        ],
+        answer: "D"
+      },
 
-  const questions = rawQuestions.map((item, idx) => {
-    const order = shuffle([0, 1, 2, 3], hash(item.text + idx));
-    const options = order.map(i => item.options[i]);
-    const answerIndex = order.indexOf(item.correct);
-    return {
-      id: idx + 1,
-      chapter: item.chapter,
-      text: item.text,
-      options,
-      answer: letters[answerIndex],
-      explanation: item.explanation
-    };
-  });
+      // Matching & Short Answer
+      {
+        id: "DD-19",
+        type: "matching",
+        question: "Match the clinical trial phase with its main characteristics:",
+        pairs: [
+          { left: "Phase 1", right: "Healthy subjects; effects on body functions, dose, pharmacokinetics" },
+          { left: "Phase 2", right: "Selected patients; effects on disease, safety, efficacy, dose" },
+          { left: "Phase 3", right: "Larger patient groups; comparison with standard therapy" },
+          { left: "Phase 4", right: "Post-approval; long-term benefit–risk evaluation" }
+        ],
+        answer: "See pairs"
+      },
+      {
+        id: "DD-20",
+        type: "short_answer",
+        question: "Name four possible sources of substances with complex structures for drug development.",
+        answer: "Plants (e.g. cardiac glycosides), animal tissues (heparin), microbial cultures (penicillin G), human cell cultures (urokinase), gene technology (human insulin)"
+      },
+      {
+        id: "DD-21",
+        type: "short_answer",
+        question: "What four types of toxicity are evaluated in toxicological investigations?",
+        answer: "1. Toxicity associated with acute or chronic administration; 2. Genetic damage (genotoxicity, mutagenicity); 3. Production of tumors (oncogenicity/carcinogenicity); 4. Causation of birth defects (teratogenicity)"
+      },
+      {
+        id: "DD-22",
+        type: "fill_blank",
+        question: "Only animal experiments can reveal whether the desired effects will actually occur at dosages that produce little or no __________.",
+        answer: "toxicity"
+      },
+      {
+        id: "DD-23",
+        type: "true_false_not_given",
+        question: "Pharmaceutical technology provides the methods for drug formulation.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "DD-24",
+        type: "multiple_choice",
+        question: "During clinical testing, many drugs are revealed to be:",
+        options: [
+          "A. Always successful",
+          "B. Unusable",
+          "C. More potent than expected",
+          "D. Completely non-toxic"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-25",
+        type: "short_answer",
+        question: "What must applicants document when submitting a new drug for approval?",
+        answer: "That the criteria of efficacy and safety have been met and that product forms satisfy general standards of quality control"
+      },
+      {
+        id: "DD-26",
+        type: "true_false_not_given",
+        question: "Structure–activity relationships help focus the search for new agents.",
+        answer: "TRUE",
+        explanation: "Stated: as more insight is gained into SAR, the search becomes more clearly focused."
+      },
+      {
+        id: "DD-27",
+        type: "fill_blank",
+        question: "In animals, compounds under investigation also have to be studied with respect to their absorption, distribution, metabolism, and elimination (__________).",
+        answer: "pharmacokinetics"
+      },
+      {
+        id: "DD-28",
+        type: "multiple_choice",
+        question: "Which international declarations are mentioned regarding ethical conduct of clinical trials?",
+        options: [
+          "A. Geneva, Paris, Rome",
+          "B. Helsinki, Tokyo, and Venice",
+          "C. London, Berlin, Madrid",
+          "D. New York, Geneva, Basel"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-29",
+        type: "short_answer",
+        question: "What happens after a new drug is approved?",
+        answer: "It may be marketed under a trade name and become available for prescription; post-licensing (Phase IV) surveillance continues."
+      },
+      {
+        id: "DD-30",
+        type: "true_false_not_given",
+        question: "The text claims that every new drug offers clear advantages over existing treatments.",
+        answer: "FALSE",
+        explanation: "It notes that if a new drug offers hardly any advantage, the cost–benefit relationship needs to be considered."
+      },
+      {
+        id: "DD-31",
+        type: "multiple_choice",
+        question: "Heparin is given as an example of a substance obtained from:",
+        options: [
+          "A. Plants",
+          "B. Animal tissues",
+          "C. Microbial cultures",
+          "D. Gene technology"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-32",
+        type: "fill_blank",
+        question: "Even at the level of preclinical testing, only a very small __________ of new compounds will prove potentially fit for use in humans.",
+        answer: "fraction"
+      },
+      {
+        id: "DD-33",
+        type: "short_answer",
+        question: "Name the three main stages after synthesis before a drug reaches general use.",
+        answer: "Preclinical testing → Clinical trials (Phases 1–3) → Approval → Phase 4 / general use"
+      },
+      {
+        id: "DD-34",
+        type: "true_false_not_given",
+        question: "Receptor binding assays are mentioned as one possible method of initial screening.",
+        answer: "TRUE",
+        explanation: "Mentioned under biochemical-pharmacological investigations."
+      },
+      {
+        id: "DD-35",
+        type: "multiple_choice",
+        question: "The decision to approve a new drug is made by:",
+        options: [
+          "A. The pharmaceutical company itself",
+          "B. A national regulatory body",
+          "C. Individual physicians",
+          "D. The World Health Organization only"
+        ],
+        answer: "B"
+      },
+      {
+        id: "DD-36",
+        type: "short_answer",
+        question: "What is the approximate success rate implied by the 10,000 → 1 ratio?",
+        answer: "Extremely low; only about 0.01% of newly synthesized substances become new drugs"
+      },
+      {
+        id: "DD-37",
+        type: "true_false_not_given",
+        question: "Phase II is the first time a potential drug is tested on patients.",
+        answer: "TRUE",
+        explanation: "Phase I is healthy subjects; Phase II is selected patients."
+      },
+      {
+        id: "DD-38",
+        type: "fill_blank",
+        question: "Applicants must document by means of appropriate test data that the criteria of __________ and safety have been met.",
+        answer: "efficacy"
+      },
+      {
+        id: "DD-39",
+        type: "multiple_choice",
+        question: "Urokinase is given as an example obtained from:",
+        options: [
+          "A. Plants",
+          "B. Microbial cultures",
+          "C. Cultures of human cells",
+          "D. Chemical synthesis only"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DD-40",
+        type: "short_answer",
+        question: "Why must potential drugs be tested in the whole animal?",
+        answer: "Because in-vitro and isolated-organ models fall short of replicating complex biological processes in the intact organism; only animal experiments can show whether desired effects occur at non-toxic dosages."
+      },
+      {
+        id: "DD-41",
+        type: "true_false_not_given",
+        question: "The text mentions that long-term experience is necessary to properly assess the risk–benefit ratio.",
+        answer: "TRUE",
+        explanation: "Stated regarding Phase IV / general use."
+      },
+      {
+        id: "DD-42",
+        type: "multiple_choice",
+        question: "Which of the following is NOT a focus of Phase 1 according to the figure description?",
+        options: [
+          "A. Effects on body functions",
+          "B. Dose definition",
+          "C. Comparison with standard therapy",
+          "D. Pharmacokinetics"
+        ],
+        answer: "C"
+      },
+      {
+        id: "DD-43",
+        type: "fill_blank",
+        question: "As more insight is gained into structure–activity relationships, the search for new agents becomes more clearly __________.",
+        answer: "focused"
+      },
+      {
+        id: "DD-44",
+        type: "short_answer",
+        question: "List the main components of preclinical testing mentioned.",
+        answer: "Biochemical-pharmacological investigations (e.g. receptor binding), experiments on cell cultures / isolated cells / organs, whole-animal testing, toxicological investigations, pharmacokinetic studies"
+      },
+      {
+        id: "DD-45",
+        type: "true_false_not_given",
+        question: "Once a drug is approved, no further evaluation of its risk–benefit ratio is needed.",
+        answer: "FALSE",
+        explanation: "Phase IV and long-term experience are required for proper assessment."
+      }
+    ]
+  },
 
-  window.quizChapters = chapters;
-  window.quizQuestions = questions;
-})();
+  // ============================================================
+  // SECTION 4: Search for Prototypes / Lead Compounds
+  // ============================================================
+  searchForPrototypes: {
+    title: "Search for Prototypes (Lead Compounds)",
+    source: "Pharmaceutical Chemistry textbook chapter 3",
+    questions: [
+      {
+        id: "SP-01",
+        type: "true_false_not_given",
+        question: "A lead compound must already be suitable for clinical use.",
+        answer: "FALSE",
+        explanation: "The lead compound is not intended to be used in clinical practice; it is only the starting point."
+      },
+      {
+        id: "SP-02",
+        type: "true_false_not_given",
+        question: "The level of biological activity of a lead compound must be particularly high.",
+        answer: "FALSE",
+        explanation: "The level of biological activity may not be particularly noticeable; this is not a fundamental issue."
+      },
+      {
+        id: "SP-03",
+        type: "true_false_not_given",
+        question: "It does not matter whether a lead compound is toxic or has side effects.",
+        answer: "TRUE",
+        explanation: "Explicitly stated."
+      },
+      {
+        id: "SP-04",
+        type: "true_false_not_given",
+        question: "One fundamental objective of pharmaceutical chemistry is to search for drugs that are more potent, more selective, and less toxic.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "SP-05",
+        type: "true_false_not_given",
+        question: "Lead compounds can only be obtained from natural sources.",
+        answer: "FALSE",
+        explanation: "They can come from natural sources (flora and fauna) or synthetic compounds prepared in the laboratory."
+      },
+      {
+        id: "SP-06",
+        type: "true_false_not_given",
+        question: "Morphine is given as an example of an early natural lead compound.",
+        answer: "TRUE",
+        explanation: "Mentioned as a natural compound derived from plants."
+      },
+      {
+        id: "SP-07",
+        type: "true_false_not_given",
+        question: "All chemical messengers (neurotransmitters) of the human body have already been identified.",
+        answer: "FALSE",
+        explanation: "Many chemical messengers are still unknown because they are present in very small amounts or have short half-lives."
+      },
+      {
+        id: "SP-08",
+        type: "true_false_not_given",
+        question: "Advances in genomics and proteomics have revealed many new potential biological targets (orphan receptors).",
+        answer: "TRUE",
+        explanation: "Stated in the continuation of the chapter."
+      },
+      {
+        id: "SP-09",
+        type: "true_false_not_given",
+        question: "Screening of natural products is described as one of the most costly and least efficient procedures.",
+        answer: "TRUE",
+        explanation: "Described as one of the most costly and least active procedures."
+      },
+      {
+        id: "SP-10",
+        type: "true_false_not_given",
+        question: "Chloramphenicol was discovered through a general microorganism screening programme.",
+        answer: "TRUE",
+        explanation: "Isolated from Streptomyces venezuelae in the Parke-Davis screening programme."
+      },
+
+      // Multiple Choice
+      {
+        id: "SP-11",
+        type: "multiple_choice",
+        question: "A lead compound is best defined as:",
+        options: [
+          "A. A drug ready for clinical use",
+          "B. A compound that can be considered therapeutically useful as a starting point for development",
+          "C. A compound that must be non-toxic",
+          "D. A compound that must have very high potency"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-12",
+        type: "multiple_choice",
+        question: "Why do many potential biological targets remain “hidden”?",
+        options: [
+          "A. They do not exist",
+          "B. Their natural chemical messengers are present in very small amounts or have short half-lives",
+          "C. Scientists are not interested in them",
+          "D. They only exist in animals"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-13",
+        type: "multiple_choice",
+        question: "Quinine is described as a natural alkaloid with which properties?",
+        options: [
+          "A. Only analgesic",
+          "B. Antipyretic, anti-malarial, and analgesic",
+          "C. Only antibiotic",
+          "D. Only antihypertensive"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-14",
+        type: "multiple_choice",
+        question: "Enkephalins and endorphins are examples of:",
+        options: [
+          "A. Synthetic analgesics",
+          "B. Natural analgesics (peptides/proteins) of the body itself",
+          "C. Plant alkaloids",
+          "D. Antibiotics"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-15",
+        type: "multiple_choice",
+        question: "Orphan receptors are:",
+        options: [
+          "A. Receptors with well-known natural ligands",
+          "B. New targets without known leading compounds that interact with them",
+          "C. Receptors only found in plants",
+          "D. Receptors that are no longer studied"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-16",
+        type: "multiple_choice",
+        question: "Most biologically active natural products are:",
+        options: [
+          "A. Primary metabolites",
+          "B. Secondary metabolites",
+          "C. Proteins only",
+          "D. Inorganic compounds"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-17",
+        type: "multiple_choice",
+        question: "The compound responsible for the biological activity of a natural source is known as the:",
+        options: [
+          "A. Lead compound only",
+          "B. Active principle",
+          "C. Prodrug",
+          "D. Metabolite"
+        ],
+        answer: "B"
+      },
+
+      // Short Answer & Fill
+      {
+        id: "SP-18",
+        type: "short_answer",
+        question: "What are the two main goals stated at the beginning of the chapter “Search for prototypes”?",
+        answer: "1. To know the global process through which new prototypes or serial heads are discovered and the methodologies used over time. 2. To know the importance of isolation, purification and structural determination of drugs."
+      },
+      {
+        id: "SP-19",
+        type: "short_answer",
+        question: "Why is the high number and great structural diversity of drugs a difficulty for students of pharmaceutical chemistry?",
+        answer: "Because of the large number of structures that need to be memorized."
+      },
+      {
+        id: "SP-20",
+        type: "fill_blank",
+        question: "If a drug or poison produces a biological effect it is because there must be a __________ target in the body.",
+        answer: "molecular"
+      },
+      {
+        id: "SP-21",
+        type: "short_answer",
+        question: "Give two examples of natural lead compounds mentioned.",
+        answer: "Morphine and quinine (also enkephalins/endorphins as endogenous examples)"
+      },
+      {
+        id: "SP-22",
+        type: "true_false_not_given",
+        question: "The authors decided to minimize the number of structures presented in the general chapters.",
+        answer: "TRUE",
+        explanation: "Stated in order to facilitate learning."
+      },
+      {
+        id: "SP-23",
+        type: "multiple_choice",
+        question: "Chemical messengers or neurotransmitters generally have:",
+        options: [
+          "A. Very long half-lives",
+          "B. Short lifespan",
+          "C. No specific cellular targets",
+          "D. Only toxic effects"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-24",
+        type: "fill_blank",
+        question: "The current challenge with orphan receptors is to find chemical compounds that interact with each of these targets to discover what their __________ are.",
+        answer: "functions"
+      },
+      {
+        id: "SP-25",
+        type: "short_answer",
+        question: "What is the name of the antibiotic isolated from Streptomyces venezuelae mentioned as a successful screening example?",
+        answer: "Chloramphenicol"
+      },
+      {
+        id: "SP-26",
+        type: "true_false_not_given",
+        question: "Natural products are an important source of biologically active compounds.",
+        answer: "TRUE",
+        explanation: "Explicitly stated."
+      },
+      {
+        id: "SP-27",
+        type: "multiple_choice",
+        question: "The active principle of a natural source can act as a:",
+        options: [
+          "A. Final drug only",
+          "B. Leader (lead) compound",
+          "C. Inactive metabolite",
+          "D. Solvent"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-28",
+        type: "short_answer",
+        question: "What has changed the whole picture of new drug development according to the text?",
+        answer: "Advances in genomics and proteomics (genome projects discovering large numbers of new proteins that are biological targets)"
+      },
+      {
+        id: "SP-29",
+        type: "fill_blank",
+        question: "Many of the earliest known drugs are natural compounds derived from plants that coincidentally interacted with a molecular target of the __________ body.",
+        answer: "human"
+      },
+      {
+        id: "SP-30",
+        type: "true_false_not_given",
+        question: "The lead compound is the final clinically useful compound.",
+        answer: "FALSE",
+        explanation: "It is only the starting derivative from which a clinically useful compound can be developed."
+      },
+      {
+        id: "SP-31",
+        type: "multiple_choice",
+        question: "Screening involves subjecting a large number of chemical compounds to:",
+        options: [
+          "A. Only chemical analysis",
+          "B. A battery of pharmacological tests",
+          "C. Only clinical trials",
+          "D. Only animal toxicity tests"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-32",
+        type: "short_answer",
+        question: "Why have few chemical messengers been identified?",
+        answer: "They are present in very small amounts or have such a short half-life that isolation is not possible."
+      },
+      {
+        id: "SP-33",
+        type: "true_false_not_given",
+        question: "The text suggests that mass screening is the most efficient modern method of drug discovery.",
+        answer: "FALSE",
+        explanation: "It is described as one of the most costly and least active procedures, although it has been successful in some fields."
+      },
+      {
+        id: "SP-34",
+        type: "fill_blank",
+        question: "Lead compounds can be obtained from a variety of natural sources, such as __________ and fauna, or synthetic compounds.",
+        answer: "flora"
+      },
+      {
+        id: "SP-35",
+        type: "short_answer",
+        question: "What is the fundamental starting requirement for a pharmaceutical chemistry project?",
+        answer: "To have a leader (lead compound) that can be considered as therapeutically useful"
+      },
+      {
+        id: "SP-36",
+        type: "multiple_choice",
+        question: "Since the 1970s a great variety of which endogenous substances acting as natural analgesics have been discovered?",
+        options: [
+          "A. Steroids",
+          "B. Peptides and proteins (enkephalins and endorphins)",
+          "C. Alkaloids only",
+          "D. Volatile oils"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-37",
+        type: "true_false_not_given",
+        question: "The chemical structures detailed in the general chapters will be studied again in the descriptive themes of Volume 2.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "SP-38",
+        type: "short_answer",
+        question: "What does the existence of a biological effect of a drug or poison imply?",
+        answer: "That there must be a molecular target in the body with which it interacts"
+      },
+      {
+        id: "SP-39",
+        type: "fill_blank",
+        question: "The authors decided to minimize the number of structures to facilitate the __________ of this discipline.",
+        answer: "learning"
+      },
+      {
+        id: "SP-40",
+        type: "true_false_not_given",
+        question: "All potential biological targets of the human body already have known natural chemical messengers.",
+        answer: "FALSE",
+        explanation: "Many remain unknown; this is why orphan receptors exist."
+      },
+      {
+        id: "SP-41",
+        type: "multiple_choice",
+        question: "Chloramphenicol was isolated from:",
+        options: [
+          "A. A plant",
+          "B. Streptomyces venezuelae",
+          "C. An animal tissue",
+          "D. Chemical synthesis only"
+        ],
+        answer: "B"
+      },
+      {
+        id: "SP-42",
+        type: "short_answer",
+        question: "What is the main disadvantage of the mass screening approach mentioned?",
+        answer: "It is one of the most costly and least active (efficient) procedures"
+      },
+      {
+        id: "SP-43",
+        type: "true_false_not_given",
+        question: "The text presents morphine and quinine as examples of lead compounds.",
+        answer: "TRUE",
+        explanation: "They appear in Fig. 3.1 as lead compounds."
+      },
+      {
+        id: "SP-44",
+        type: "fill_blank",
+        question: "Pharmaceutical chemistry is facing new targets without leading compounds; such targets have been defined as __________ receptors.",
+        answer: "orphan"
+      },
+      {
+        id: "SP-45",
+        type: "short_answer",
+        question: "Summarize the traditional vs. current challenge in finding lead compounds.",
+        answer: "Traditionally, leads came from natural products with observed biological effects. Currently, genomics/proteomics have revealed many new targets (orphan receptors) without known natural ligands, so the challenge is to find compounds that interact with them."
+      }
+    ]
+  },
+
+  // ============================================================
+  // SECTION 5: Alkaloids (based on available text)
+  // ============================================================
+  alkaloids: {
+    title: "Drugs Containing Alkaloids",
+    source: "Chapter 15 – Drugs Containing Alkaloids",
+    questions: [
+      {
+        id: "ALK-01",
+        type: "true_false_not_given",
+        question: "Alkaloids are one of the largest groups of chemicals produced by plants.",
+        answer: "TRUE",
+        explanation: "First sentence of the introduction."
+      },
+      {
+        id: "ALK-02",
+        type: "true_false_not_given",
+        question: "More than 10,000 different alkaloids have been discovered.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "ALK-03",
+        type: "true_false_not_given",
+        question: "All alkaloids contain a nitrogen atom within a carbon ring.",
+        answer: "FALSE",
+        explanation: "In some alkaloids such as mescaline the nitrogen atom is not within a carbon ring."
+      },
+      {
+        id: "ALK-04",
+        type: "true_false_not_given",
+        question: "Alkaloids often have a bitter taste.",
+        answer: "TRUE",
+        explanation: "Most alkaloids have a very bitter taste."
+      },
+      {
+        id: "ALK-05",
+        type: "true_false_not_given",
+        question: "The name “alkaloid” derives from their alkaline properties.",
+        answer: "TRUE",
+        explanation: "Their amine character produces an alkaline solution in water; the name originates from this."
+      },
+      {
+        id: "ALK-06",
+        type: "true_false_not_given",
+        question: "Alkaloids occur only in plants.",
+        answer: "FALSE",
+        explanation: "They are also found in animals (e.g. shellfish) and fungi."
+      },
+      {
+        id: "ALK-07",
+        type: "true_false_not_given",
+        question: "Many alkaloids are poisonous, yet some are used in medicine as analgesics or anaesthetics.",
+        answer: "TRUE",
+        explanation: "Examples given: strychnine or coniine are poisonous; morphine and codeine are used as analgesics."
+      },
+      {
+        id: "ALK-08",
+        type: "true_false_not_given",
+        question: "Alkaloids have structural similarities with neurotransmitters such as dopamine, serotonin and acetylcholine.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "ALK-09",
+        type: "true_false_not_given",
+        question: "The first alkaloids were reproducibly isolated and analysed only in the early nineteenth century.",
+        answer: "TRUE",
+        explanation: "Stated in the history section."
+      },
+      {
+        id: "ALK-10",
+        type: "true_false_not_given",
+        question: "Alkaloids are usually extracted from their sources by treatment with bases.",
+        answer: "FALSE",
+        explanation: "They are extracted by treatment with acids (HCl, H2SO4, or organic acids)."
+      },
+
+      // Multiple Choice
+      {
+        id: "ALK-11",
+        type: "multiple_choice",
+        question: "Alkaloids are typically:",
+        options: [
+          "A. Acidic compounds",
+          "B. Nitrogenous organic molecules with pharmacological effects",
+          "C. Pure hydrocarbons",
+          "D. Inorganic salts"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-12",
+        type: "multiple_choice",
+        question: "Which of the following is NOT a typical clinical use of alkaloids mentioned?",
+        options: [
+          "A. Analgesics",
+          "B. Antimalarials",
+          "C. Antibiotics (broad-spectrum synthetic)",
+          "D. Treatment of hypertension and mental disorders"
+        ],
+        answer: "C"
+      },
+      {
+        id: "ALK-13",
+        type: "multiple_choice",
+        question: "Alkaloids mainly occur in plants as salts of:",
+        options: [
+          "A. Strong mineral acids only",
+          "B. Common carboxylic acids (citric, lactic, oxalic, etc.)",
+          "C. Only hydrochloric acid",
+          "D. No salts – they are free bases"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-14",
+        type: "multiple_choice",
+        question: "The term “alkaloid” is thought to have originated from the properties of which compound?",
+        options: [
+          "A. Quinine",
+          "B. Morphine",
+          "C. Caffeine",
+          "D. Nicotine"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-15",
+        type: "multiple_choice",
+        question: "Usually alkaloids are derivatives of:",
+        options: [
+          "A. Fatty acids",
+          "B. Amino acids",
+          "C. Sugars",
+          "D. Steroids"
+        ],
+        answer: "B"
+      },
+
+      // Short Answer
+      {
+        id: "ALK-16",
+        type: "short_answer",
+        question: "Give two examples of poisonous alkaloids mentioned.",
+        answer: "Strychnine and coniine"
+      },
+      {
+        id: "ALK-17",
+        type: "short_answer",
+        question: "Name two alkaloids used as analgesics.",
+        answer: "Morphine and codeine"
+      },
+      {
+        id: "ALK-18",
+        type: "fill_blank",
+        question: "Alkaloids are renowned for their potent __________ activities.",
+        answer: "pharmacological"
+      },
+      {
+        id: "ALK-19",
+        type: "short_answer",
+        question: "In which plant parts can alkaloids be found?",
+        answer: "Berries, bark, fruit, roots and leaves (and other parts)"
+      },
+      {
+        id: "ALK-20",
+        type: "true_false_not_given",
+        question: "Tiny amounts of some alkaloids can immobilize an elephant or a rhinoceros.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "ALK-21",
+        type: "multiple_choice",
+        question: "Advances in which techniques led to the elucidation of the chemical structure of alkaloids?",
+        options: [
+          "A. Only distillation",
+          "B. Chromatography and mass spectroscopy",
+          "C. Only crystallization",
+          "D. Only biological assays"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-22",
+        type: "short_answer",
+        question: "What is the origin of the name “alkaloid”?",
+        answer: "From “alkaline”; originally used to describe any nitrogen-containing base (amine). Morphine had similar properties to basic salts from alkali ashes of plants → “vegetable alkali” or alkaloid."
+      },
+      {
+        id: "ALK-23",
+        type: "true_false_not_given",
+        question: "Alkaloids have been used by humanity for thousands of years.",
+        answer: "TRUE",
+        explanation: "Evidence suggests use by ancient Sumerians and Egyptians."
+      },
+      {
+        id: "ALK-24",
+        type: "fill_blank",
+        question: "The precise position of the __________ atom affects the properties of these alkaloids.",
+        answer: "nitrogen"
+      },
+      {
+        id: "ALK-25",
+        type: "multiple_choice",
+        question: "Which of the following is an example of an alkaloid in which nitrogen is not inside a carbon ring?",
+        options: [
+          "A. Morphine",
+          "B. Mescaline",
+          "C. Quinine",
+          "D. Codeine"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-26",
+        type: "short_answer",
+        question: "List at least five carboxylic acids whose salts of alkaloids commonly occur in plants.",
+        answer: "Citric, lactic, oxalic, acetic, maleic, tartaric, fumaric, benzoic, aconitic, veratric acids"
+      },
+      {
+        id: "ALK-27",
+        type: "true_false_not_given",
+        question: "All alkaloids are used only for their toxic effects.",
+        answer: "FALSE",
+        explanation: "Many have important clinical uses (analgesics, antimalarials, etc.)."
+      },
+      {
+        id: "ALK-28",
+        type: "fill_blank",
+        question: "Alkaloids can be extracted from their sources by treatment with __________ (usually hydrochloric or sulphuric acid).",
+        answer: "acids"
+      },
+      {
+        id: "ALK-29",
+        type: "short_answer",
+        question: "What serious problem can arise from the use of alkaloids by people ignorant of their properties?",
+        answer: "Serious addictions (and also the development of powerful painkillers and spiritual drugs)"
+      },
+      {
+        id: "ALK-30",
+        type: "true_false_not_given",
+        question: "Alkaloids occur mainly in seed-bearing plants.",
+        answer: "TRUE",
+        explanation: "Stated in the definition section."
+      },
+      {
+        id: "ALK-31",
+        type: "multiple_choice",
+        question: "The amazing effect of alkaloids on humans has led to the development of:",
+        options: [
+          "A. Only agricultural chemicals",
+          "B. Powerful painkiller medications, spiritual drugs, and serious addictions",
+          "C. Only food additives",
+          "D. Only industrial solvents"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-32",
+        type: "short_answer",
+        question: "Name two plant genera mentioned as sources of alkaloids.",
+        answer: "Vinca and Datura (among many others)"
+      },
+      {
+        id: "ALK-33",
+        type: "true_false_not_given",
+        question: "Prior to approximately 300 years ago, malaria was the scourge of Europe.",
+        answer: "TRUE",
+        explanation: "Stated at the beginning of the history continuation."
+      },
+      {
+        id: "ALK-34",
+        type: "fill_blank",
+        question: "Alkaloids are nitrogen __________ which occur mainly in plants as their salts of common carboxylic acids.",
+        answer: "heterocycles"
+      },
+      {
+        id: "ALK-35",
+        type: "short_answer",
+        question: "Why is the position of the nitrogen atom important?",
+        answer: "It is the precise position of the nitrogen atom that affects the properties of these alkaloids."
+      },
+      {
+        id: "ALK-36",
+        type: "true_false_not_given",
+        question: "Alkaloids are secondary metabolites.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "ALK-37",
+        type: "multiple_choice",
+        question: "Which statement about alkaloid taste is correct?",
+        options: [
+          "A. Most are sweet",
+          "B. Most have a very bitter taste",
+          "C. They are tasteless",
+          "D. Taste varies randomly with no pattern"
+        ],
+        answer: "B"
+      },
+      {
+        id: "ALK-38",
+        type: "short_answer",
+        question: "What analytical advances allowed structure elucidation of alkaloids?",
+        answer: "Chromatography and mass spectroscopy (and related separation techniques)"
+      },
+      {
+        id: "ALK-39",
+        type: "true_false_not_given",
+        question: "The text claims that no alkaloids have clinical use because they are all too toxic.",
+        answer: "FALSE",
+        explanation: "Many have important clinical uses despite toxicity of some members."
+      },
+      {
+        id: "ALK-40",
+        type: "fill_blank",
+        question: "Even though many alkaloids are poisonous, some are used in medicine as analgesics (pain relievers) or __________.",
+        answer: "anaesthetics"
+      }
+    ]
+  },
+
+  // ============================================================
+  // SECTION 6: Volatile Oils (Essential Oils)
+  // ============================================================
+  volatileOils: {
+    title: "Drugs Containing Volatile Oils",
+    source: "Chapter 17 – Volatile oils",
+    questions: [
+      {
+        id: "VO-01",
+        type: "true_false_not_given",
+        question: "Volatile oils evaporate when exposed to air at ordinary temperature.",
+        answer: "TRUE",
+        explanation: "Definition given."
+      },
+      {
+        id: "VO-02",
+        type: "true_false_not_given",
+        question: "Volatile oils are also known as essential oils or ethereal oils.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "VO-03",
+        type: "true_false_not_given",
+        question: "In all cases the volatile oil preexists in the plant.",
+        answer: "FALSE",
+        explanation: "In a few cases it is formed by decomposition of a glycoside (e.g. mustard)."
+      },
+      {
+        id: "VO-04",
+        type: "true_false_not_given",
+        question: "Volatile oils are freely soluble in water.",
+        answer: "FALSE",
+        explanation: "They are insoluble in water; soluble in ether, chloroform and fairly soluble in alcohol."
+      },
+      {
+        id: "VO-05",
+        type: "true_false_not_given",
+        question: "Volatile oils leave a permanent grease spot on filter paper.",
+        answer: "FALSE",
+        explanation: "Unlike fixed oils, they do not leave a permanent grease spot."
+      },
+      {
+        id: "VO-06",
+        type: "true_false_not_given",
+        question: "Most volatile oils are optically active and have a high refractive index.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "VO-07",
+        type: "true_false_not_given",
+        question: "Volatile oils become darker when exposed to air and direct sunlight due to oxidation.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "VO-08",
+        type: "true_false_not_given",
+        question: "Clove oil is lighter than water.",
+        answer: "FALSE",
+        explanation: "The text notes that clove oil is heavier than water."
+      },
+      {
+        id: "VO-09",
+        type: "true_false_not_given",
+        question: "Volatile oils are chemically derived mainly from terpenes (mono- and sesquiterpenes) and their oxygenated derivatives.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "VO-10",
+        type: "true_false_not_given",
+        question: "Whole black mustard seeds are odourless until crushed with water.",
+        answer: "TRUE",
+        explanation: "Because the oil is formed by enzymatic decomposition of sinigrin."
+      },
+
+      // Multiple Choice
+      {
+        id: "VO-11",
+        type: "multiple_choice",
+        question: "Volatile oils are classified on the basis of:",
+        options: [
+          "A. Colour only",
+          "B. Functional groups present",
+          "C. Boiling point only",
+          "D. Botanical family only"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-12",
+        type: "multiple_choice",
+        question: "Which group does turpentine oil belong to?",
+        options: [
+          "A. Alcohols",
+          "B. Hydrocarbons",
+          "C. Aldehydes",
+          "D. Phenols"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-13",
+        type: "multiple_choice",
+        question: "Peppermint oil and sandalwood oil are examples of volatile oils containing mainly:",
+        options: [
+          "A. Hydrocarbons",
+          "B. Alcohols",
+          "C. Aldehydes",
+          "D. Ketones"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-14",
+        type: "multiple_choice",
+        question: "Cinnamon, cassia and lemongrass oils are rich in:",
+        options: [
+          "A. Phenols",
+          "B. Aldehydes",
+          "C. Esters",
+          "D. Oxides"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-15",
+        type: "multiple_choice",
+        question: "Clove, ajowan and tulsi oils are examples of the __________ group.",
+        options: [
+          "A. Ketones",
+          "B. Phenols",
+          "C. Esters",
+          "D. Hydrocarbons"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-16",
+        type: "multiple_choice",
+        question: "The two principal methods of scarification for citrus oils are:",
+        options: [
+          "A. Steam and water distillation",
+          "B. Sponge and ecuelle methods",
+          "C. Solvent extraction and expression",
+          "D. Enfleurage and maceration"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-17",
+        type: "multiple_choice",
+        question: "Volatile oils from fresh materials are preferably separated by:",
+        options: [
+          "A. Only solvent extraction",
+          "B. Hydrodistillation",
+          "C. Only scarification",
+          "D. Only expression"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-18",
+        type: "multiple_choice",
+        question: "The main constituent of the essential oil of mustard formed after crushing is:",
+        options: [
+          "A. Menthol",
+          "B. Allyl isothiocyanate",
+          "C. Eugenol",
+          "D. Cineole"
+        ],
+        answer: "B"
+      },
+
+      // Matching & Short Answer
+      {
+        id: "VO-19",
+        type: "matching",
+        question: "Match the functional group class with example drugs/oils:",
+        pairs: [
+          { left: "Hydrocarbons", right: "Turpentine oil" },
+          { left: "Alcohols", right: "Peppermint, sandalwood" },
+          { left: "Aldehydes", right: "Lemongrass, cinnamon, cassia" },
+          { left: "Ketones", right: "Camphor, caraway, dill, fennel" },
+          { left: "Phenols", right: "Clove, ajowan, tulsi" },
+          { left: "Oxides", right: "Eucalyptus, cardamom" },
+          { left: "Esters", right: "Valerian, rosemary, gaultheria" }
+        ],
+        answer: "See pairs"
+      },
+      {
+        id: "VO-20",
+        type: "short_answer",
+        question: "Why do whole black mustard seeds have no odour until crushed with water?",
+        answer: "The volatile oil (allyl isothiocyanate) is formed by decomposition of the glycoside sinigrin by the enzyme myrosin; the glycoside and enzyme are in different cells and only meet when the seeds are crushed in the presence of water."
+      },
+      {
+        id: "VO-21",
+        type: "fill_blank",
+        question: "Volatile oils represent the __________ of active constituents of the plant and hence are also known as essential oils.",
+        answer: "essence"
+      },
+      {
+        id: "VO-22",
+        type: "short_answer",
+        question: "Name three locations in plants where volatile oils may be stored.",
+        answer: "Oil ducts of umbelliferous fruits, oil cells or oil glands in the sub-epidermal tissue of lemon/orange, mesophyll of eucalyptus leaves, trichomes of several plants"
+      },
+      {
+        id: "VO-23",
+        type: "true_false_not_given",
+        question: "Volatile oils can dissolve many proximate principles such as fixed oils, fats, resins, camphor and free alkaloids.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "VO-24",
+        type: "multiple_choice",
+        question: "Scarification is mainly used for the preparation of oils from:",
+        options: [
+          "A. Leaves",
+          "B. Citrus peels (lemon, orange, bergamot)",
+          "C. Roots",
+          "D. Seeds only"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-25",
+        type: "short_answer",
+        question: "What is the difference between hydrodistillation and steam distillation in the context of volatile oil extraction?",
+        answer: "Hydrodistillation is used for fresh materials; steam distillation is used for air-dried parts. Fresh materials are preferred in either case."
+      },
+      {
+        id: "VO-26",
+        type: "true_false_not_given",
+        question: "Volatile oils are saponified with alkalis like fixed oils.",
+        answer: "FALSE",
+        explanation: "Unlike fixed oils, they are not saponified with alkalis."
+      },
+      {
+        id: "VO-27",
+        type: "fill_blank",
+        question: "Volatile oils are colourless liquids but become __________ when exposed to air and direct sunlight due to oxidation.",
+        answer: "darker"
+      },
+      {
+        id: "VO-28",
+        type: "multiple_choice",
+        question: "Eucalyptus oil belongs to which chemical group according to the classification table?",
+        options: [
+          "A. Phenols",
+          "B. Oxides",
+          "C. Esters",
+          "D. Aldehydes"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-29",
+        type: "short_answer",
+        question: "List the main physical properties of volatile oils mentioned.",
+        answer: "Odorous, evaporate at ordinary temperature, soluble in alcohol/organic solvents, insoluble in water, lighter than water (except clove oil), high refractive index, mostly optically active, colourless when fresh, darken on oxidation, do not leave permanent grease spot, not saponified by alkalis"
+      },
+      {
+        id: "VO-30",
+        type: "true_false_not_given",
+        question: "The enzyme and glycoside responsible for mustard oil formation are located in the same cells.",
+        answer: "FALSE",
+        explanation: "They are contained in different cells of the seed tissue."
+      },
+      {
+        id: "VO-31",
+        type: "fill_blank",
+        question: "In most instances the volatile oil is usually contained in some special __________ tissues.",
+        answer: "secretory"
+      },
+      {
+        id: "VO-32",
+        type: "multiple_choice",
+        question: "Which oil is given as an example of the phenolic ethers group?",
+        options: [
+          "A. Clove",
+          "B. Nutmeg / Calamus",
+          "C. Peppermint",
+          "D. Turpentine"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-33",
+        type: "short_answer",
+        question: "What are the two main extraction techniques discussed?",
+        answer: "Extraction by distillation (hydrodistillation / steam distillation) and extraction by scarification (sponge and ecuelle methods)"
+      },
+      {
+        id: "VO-34",
+        type: "true_false_not_given",
+        question: "It is better to use air-dried materials rather than fresh materials for distillation.",
+        answer: "FALSE",
+        explanation: "The text states it is better to use fresh materials in either case."
+      },
+      {
+        id: "VO-35",
+        type: "fill_blank",
+        question: "Volatile oils are freely soluble in ether and in chloroform and fairly soluble in __________.",
+        answer: "alcohol"
+      },
+      {
+        id: "VO-36",
+        type: "multiple_choice",
+        question: "Camphor, caraway and dill belong to which group?",
+        options: [
+          "A. Alcohols",
+          "B. Ketones",
+          "C. Phenols",
+          "D. Esters"
+        ],
+        answer: "B"
+      },
+      {
+        id: "VO-37",
+        type: "short_answer",
+        question: "Why are volatile oils also called “ethereal oils”?",
+        answer: "Because they evaporate when exposed to air at ordinary temperature (like ether)."
+      },
+      {
+        id: "VO-38",
+        type: "true_false_not_given",
+        question: "Volatile oils can be used to dissolve fixed oils, fats, resins and many free alkaloids.",
+        answer: "TRUE",
+        explanation: "Stated."
+      },
+      {
+        id: "VO-39",
+        type: "fill_blank",
+        question: "The glycoside in mustard seeds is called __________ and the enzyme is myrosin.",
+        answer: "sinigrin"
+      },
+      {
+        id: "VO-40",
+        type: "short_answer",
+        question: "Name four chemical classes of volatile oils according to the classification table.",
+        answer: "Hydrocarbons, alcohols, aldehydes, ketones, phenols, phenolic ethers, oxides, esters (any four)"
+      }
+    ]
+  }
+};
+
+// Export for use in Node or browser
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = questionBank;
+}
+
+// Summary counts
+const summary = Object.keys(questionBank).map(key => ({
+  section: questionBank[key].title,
+  count: questionBank[key].questions.length
+}));
+
+console.log("Question Bank Summary:");
+console.table(summary);
+console.log("Total questions:", summary.reduce((sum, s) => sum + s.count, 0));
